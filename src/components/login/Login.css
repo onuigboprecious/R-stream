@@ -1,13 +1,14 @@
 .Login_section img {
   width: auto;
   height: 35rem;
-  margin-bottom: 2rem;
+  margin:0;
 }
 
 .Form_panel {
   margin: 5px;
   margin-top: 2cm;
 }
+
 Form {
   background-color: #f2f2f2;
   width: 400px;
@@ -17,7 +18,9 @@ Form {
   align-content: center;
   align-items: center;
   border-radius: 10px;
+  position:absolute;
 }
+
 
 .intro {
   text-align: center;
@@ -38,7 +41,7 @@ Form {
     text-align: center;
 }
 
-.signUp {
+.login {
   text-align: center;
   font-size: 12px;
   margin-bottom: 15px;
@@ -47,7 +50,7 @@ Form {
   color: #000000;
   display: inline-flex;
 }
-.singUp_link {
+.signUp_link {
   color: #833ab4;
   padding-left: 5px;
 }
@@ -90,42 +93,30 @@ Form {
 
 
 
+/* 
 
 
-
-/* // Small devices (landscape phones, 480px and up) */
 @media screen and (max-width: 600px) {
 
   .Login_section img {
     width: auto;
     height: auto;
   }
-  Col{
-   padding: 0;
-   margin: 0;
-  }
+
   Form {
     background-color: #f2f2f2;
     width:auto;
- margin: 2rem;
-    /* padding: 1cm; */
+    margin: 0;
   }
+
   .Form_panel {
-    margin-left: 0;
-    margin-right: 0;
+ margin: 0;
+ padding: 0;
   }
+
   form.Form_panel{
     margin: 10px;
   }
- }
+ } */
 
-/* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
-
-}
-
-/* // Large devices (desktops, 980px and up) */
-@media (min-width: 980px) { 
-
-}
 

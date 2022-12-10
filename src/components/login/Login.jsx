@@ -24,7 +24,7 @@ function Login() {
     <div className="Login_section">
       <Container>
         <Row>
-          <Col>
+          <Col xm={12} sm={12} md={6} >
             <Carousel>
               <Carousel.Item>
                 <img
@@ -53,18 +53,18 @@ function Login() {
           </Col>
 
           {/* -------------------------end of carousel----------------------- */}
-          <Col>
+          <Col xm={12} sm={12} md={6} >
             <Form className="Form_panel">
               <div className="intro">Welcome!</div>
-              <div className="signUp">
+              <div className="login">
                 Not yet a member? 
-                <NavLink className="singUp_link" as={Link} to="/sign-up">
+                <NavLink className="signUp_link" as={Link} to="/sign-up">
                   Sign up
                 </NavLink>
               </div>
 
               <InputGroup className="mb-3" controlId="formGroupEmail">
-        <InputGroup.Text id="basic-addon1"> <BsFillEnvelopeFill /> </InputGroup.Text>
+            <InputGroup.Text id="basic-addon1"> <BsFillEnvelopeFill /> </InputGroup.Text>
                 <Form.Control type="email" placeholder="Example@refinipee.com" />
               </InputGroup>
 
@@ -90,7 +90,7 @@ function Login() {
             </Form>
           </Col>
         </Row>
-      </Container>
+        </Container>
     </div>
   );
 }
