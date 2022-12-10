@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400&display=swap');
+
+.nav_section{
+    font-family: 'Sora', sans-serif;
+    color: black;
+    font-weight: 400;
+    font-size: 12px;
+}
+.btn_login{
+    background-color: #833ab4;
+    color: #ffffff;
+    font-size:12px;
+    font-weight: 300;
+    
+}
+.btn_sign_up{
+    border-color: #833ab4;
+    color: #833ab4;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.btn_login:hover{
+    background-color:#833ab4;
+    color: #ffffff;
+}
+.btn_sign_up:hover{
+    background-color: #833ab4;
+    color: #ffffff;
+}

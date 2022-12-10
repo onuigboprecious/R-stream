@@ -1,0 +1,90 @@
+.Sign_section img {
+  margin-top: 5rem;
+    width: auto;
+    height: auto;
+  }
+  
+  /* .Form_panel {
+    margin-left: 100px;
+  } */
+  Form {
+    background-color: #f2f2f2;
+    width: 400px;
+    margin-top: 3rem;
+    margin-bottom: 5.5rem;
+    padding: 1.5rem;
+    align-content: center;
+    align-items: center;
+    border-radius: 15px;
+  }
+  
+  .intro {
+    text-align: center;
+    font-size: 15px;
+    margin: 15px;
+    font-weight: 700;
+    font-family: 'Sora', sans-serif;
+    color: #000000;
+    margin-bottom: auto;
+  }
+  .intro_text{
+      font-size: 10px;
+      color: #000000;
+      font-weight: 700;
+      font-family: 'Sora', sans-serif;
+      margin-bottom: 20px;
+      font-style: italic;
+      text-align: center;
+  }
+  
+  .Sign {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    font-family: 'Sora', sans-serif;
+    color: #000000;
+    display: inline-flex;
+  }
+  .Sign_link {
+    color: #833ab4;
+    padding-left: 5px;
+  }
+  
+  .terms_cons {
+    font-size: 12px;
+    font-family: 'Sora', sans-serif;
+    color: #000000;
+    display: inline-flex;
+  }
+  .terms_cons div {
+    margin-left: 5px;
+  }
+  .btn_Sign_page {
+    background-color: #833ab4;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 300;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .terms_cons {
+    font-size: 12px;
+    margin: 11px;
+    font-family: 'Sora', sans-serif;
+    color: #000000;
+    display: inline-flex;
+  }
+  .terms_cons_link {
+    color: #833ab4;
+    padding-left: 5px;
+    display: inline;
+  }
+  
+  #basic-addon1 {
+    color: #833ab4;
+  }
+  
+  
