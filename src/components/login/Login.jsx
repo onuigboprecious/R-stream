@@ -23,7 +23,7 @@ function Login() {
   return (
     <div className="Login_section">
       <Container>
-        <Row>
+        <Row xm={12} sm={12} md={12} lg={12}>
           <Col xm={12} sm={12} md={6} >
             <Carousel>
               <Carousel.Item>
@@ -53,8 +53,8 @@ function Login() {
           </Col>
 
           {/* -------------------------end of carousel----------------------- */}
-          <Col xm={12} sm={12} md={6} >
-            <Form className="Form_panel">
+          <Col className=" layout_panel xm={12} sm={12} md={6} px-0" >
+            <Form className="form_panel">
               <div className="intro">Welcome!</div>
               <div className="login">
                 Not yet a member? 
@@ -64,12 +64,12 @@ function Login() {
               </div>
 
               <InputGroup className="mb-3" controlId="formGroupEmail">
-            <InputGroup.Text id="basic-addon1"> <BsFillEnvelopeFill /> </InputGroup.Text>
+            <InputGroup.Text id="basic-addon1" className='login_icons'> <BsFillEnvelopeFill /> </InputGroup.Text>
                 <Form.Control type="email" placeholder="Example@refinipee.com" />
               </InputGroup>
 
              <InputGroup className="mb-3" controlId="formGroupPassword">
-            <InputGroup.Text id="basic-addon1"> <BsFillKeyFill /> </InputGroup.Text>
+            <InputGroup.Text id="basic-addon1" className='login_icons'> <BsFillKeyFill /> </InputGroup.Text>
                 <Form.Control type="password"  placeholder="**********" /> 
                 </InputGroup>
 
