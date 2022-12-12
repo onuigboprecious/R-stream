@@ -1,10 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes,  } from 'react-router-dom';
 //----------React Bootstarp Dependencies----------------
 import 'react-bootstrap';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //-----------Application Components----------------------
+
 import Banner from './components/banner/Banner';
 import Footer from './components/footer/Footer';
 import NavHead from './components/navbar/Navbar';
@@ -18,6 +19,7 @@ import './App.css';
 export default function App() {
   return (
     <div className="App">
+     
       <Router>
         <NavHead />
         <Routes>
@@ -27,9 +29,10 @@ export default function App() {
           <Route path="/cat" element={<Cat />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<Sign />} />
+          <Route path="/authenticate" element={<authenticate />} />
+          <Route path="*" element={<p>404 page not found!</p>} />
         </Routes>
       </Router>
-
       <Footer />
     </div>
   );

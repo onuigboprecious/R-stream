@@ -1,0 +1,7 @@
+.footer{
+    background-image: url(/src/assets/home.png);
+    background-size:contain;
+    height: 525px;
+    width: 100%;
+    background-repeat: no-repeat;
+    }

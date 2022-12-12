@@ -1,7 +1,64 @@
-/* .land_banner{
-    background-image: url(/src/assets/home.png);
-    background-size: cover;
-    height: 525px;
-    width: 100%;
-    background-repeat: no-repeat;
-    } */
+.banner_layout {
+  margin-top: 3rem;
+}
+
+.banner_intro {
+  font-size: 60px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 900;
+  /* ff 3.6+ */
+  background: -moz-linear-gradient(
+    149deg,
+    #833ab4 25%,
+    #d400d4 64%,
+    #ee82ee 100%
+  );
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-linear-gradient(
+    149deg,
+    #833ab4 25%,
+    #d400d4 64%,
+    #ee82ee 100%
+  );
+
+  /* opera 11.10+ */
+  background: -o-linear-gradient(
+    149deg,
+    #833ab4 25%,
+    #d400d4 64%,
+    #ee82ee 100%
+  );
+
+  /* ie 10+ */
+  background: -ms-linear-gradient(
+    149deg,
+    #833ab4 25%,
+    #d400d4 64%,
+    #ee82ee 100%
+  );
+
+  /* global 94%+ browsers support */
+  background: linear-gradient(149deg, #833ab4 25%, #d400d4 64%, #ee82ee 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.banner_text {
+  font-weight: 700;
+  font-size: 30px;
+  font-family: 'Sora', sans-serif;
+  margin: 20px 0px;
+  color: #2f2e41;
+}
+
+.btn_more {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: large;
+  font-weight: 800;
+  color: #ffffff;
+  background: linear-gradient(149deg, #833ab4 25%, #d400d4 64%, #ee82ee 100%);
+
+}

@@ -1,6 +1,7 @@
 import {Container, NavLink, Navbar, Nav, Button,  } from 'react-bootstrap';
 import logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
+import {useStytchSession} from '@stytch/stytch-react'
 import '../login/Login';
 import '../sign/Sign';
 import '../live/Live';
@@ -8,7 +9,13 @@ import '../cat/Cat';
 import  '../pod/Pod' 
 import './Navbar.css';
 
+
+
 function NavHead() {
+
+
+  const session= useStytchSession()
+
   return (
     <div className="nav_section">
       <Navbar bg="transparent" expand="md">
@@ -38,14 +45,14 @@ function NavHead() {
               </NavLink>
             </Nav>
             <Nav className="d-flex action">
-              <Button
+              { !session && <Button
                 variant="Light"
                 className="btn_login m-2"
                 as={Link}
                 to="/login"
               >
                 Login
-              </Button>
+              </Button>}
 
               <Button
                 variant="outline-Light"
