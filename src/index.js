@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { StytchProvider } from '@stytch/stytch-react';
 import { StytchUIClient } from '@stytch/vanilla-js';
 import './index.css';
-import './typewriter'
+import './typewriter';
 import App from './App';
 
 const stytch = new StytchUIClient('public-token-test-15c8ecbd-4a04-4a3d-82ef-11441eda8b1a');

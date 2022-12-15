@@ -1,7 +1,38 @@
-.footer{
-    background-image: url(/src/assets/home.png);
-    background-size:contain;
-    height: 525px;
-    width: 100%;
-    background-repeat: no-repeat;
-    }
+.footer {
+  background-image: url(/src/assets/footer.png);
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.footer_zip {
+  padding-top: 12rem;
+}
+.socials {
+  font-size: 25px;
+  color:#f2f2f2;
+}
+.socials:hover{
+    color:#cfcece;
+}
+
+.footer_links {
+  color: #ffffff;
+  font-size: 12px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 900;
+}
+.footer_links:hover{
+    color:#cfcece;
+}
+.brand_name {
+  margin: 5px;
+  font-size: 20px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 900;
+  background: linear-gradient(149deg, #833ab4 25%, #d400d4 64%, #ee82ee 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}

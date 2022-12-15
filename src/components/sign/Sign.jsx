@@ -119,7 +119,10 @@ function Sign() {
 
               <div className="terms_cons">
                 <Form.Check aria-label="option 1" /> <div> I have read And agreed to the
-                <NavLink className="terms_cons_link" as={Link} to="/login">
+
+
+
+                <NavLink className="terms_cons_link" as={Link} to="/">
                   Terms & Conditions
                 </NavLink> 
                   </div>

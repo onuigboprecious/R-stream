@@ -1,0 +1,54 @@
+*{
+  font-family: 'Sora', sans-serif;
+}
+
+.product_brand {
+  background-color: #f2f2f2;
+  height: fit-content;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.product_margin{
+  padding-bottom: 6rem;
+}
+
+.product_text {
+  font-size: 50px;
+  font-weight: 800;
+
+}
+
+.product_text .qoute{
+  display: flex;
+  padding-bottom: 0;
+  color: #833ab4;
+}
+.product_text div {
+  background: linear-gradient(149deg, #833ab4 25%, #d400d4 64%, #ee82ee 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.micro_text{
+  padding-top: 10px;
+  font-size: 15px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+}
+
+
+.product_img:first-child {
+  width: 10cm;
+  height: 10cm;
+  border: rebeccapurple 1.5px solid;
+  border-radius: 100px;
+  transition: all 0.5s;
+  align-content: center;
+}
+
+.product_img:first-child:hover{
+  transform: scale(1.1);
+
+
+}

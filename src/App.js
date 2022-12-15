@@ -7,14 +7,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //-----------Application Components----------------------
 
 import Banner from './components/banner/Banner';
+// import Product from './components/product/Product'
 import Footer from './components/footer/Footer';
 import NavHead from './components/navbar/Navbar';
 import Login from './components/login/Login';
 import Sign from './components/sign/Sign';
 import Live from './components/live/Live';
 import Cat from './components/cat/Cat';
-import Pod from './components/pod/Pod' 
+import Pod from './components/pod/Pod';
 import './App.css';
+
 
 export default function App() {
   return (
@@ -33,6 +35,7 @@ export default function App() {
           <Route path="*" element={<p>404 page not found!</p>} />
         </Routes>
       </Router>
+      {/* <Product /> */}
       <Footer />
     </div>
   );

@@ -49,16 +49,18 @@
   font-weight: 700;
   font-size: 30px;
   font-family: 'Sora', sans-serif;
-  margin: 20px 0px;
+  margin-top: 20px;
+  padding-bottom: 10px;
   color: #2f2e41;
 }
 
 .btn_more {
-  margin-top: 10px;
+  margin-top: 1rem;
   margin-bottom: 20px;
   font-size: large;
-  font-weight: 800;
+  font-weight: 600;
   color: #ffffff;
+  border-radius: 20px;
+  padding: 10px;
   background: linear-gradient(149deg, #833ab4 25%, #d400d4 64%, #ee82ee 100%);
-
 }
