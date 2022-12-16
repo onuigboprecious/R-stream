@@ -3,7 +3,7 @@ import './Product.css';
 import { Row, Col, Container } from 'react-bootstrap';
 import product_01 from '../../../assets/product_01.png';
 import product_02 from '../../../assets/product_02.png';
-import {ImQuotesLeft} from 'react-icons/im'
+import {BsChatQuote} from 'react-icons/bs'
 
 function Product() {
   return (
@@ -15,7 +15,7 @@ function Product() {
           </Col>
           <Col xm={12} sm={12} md={7}>
             <div className="product_text">
-            <p className='qoute'><ImQuotesLeft/></p>
+            <p className='qoute'><BsChatQuote/></p>
             Powering the most podcasts <div>worldwide...</div>
               </div>
 
@@ -31,7 +31,7 @@ function Product() {
         <Row xm={12} sm={12} md={12} lg={12}>
           <Col xm={12} sm={12} md={7}>
           <div className="product_text">
-            <p className='qoute'><ImQuotesLeft/></p>
+            <p className='qoute'><BsChatQuote/></p>
             Live streaming <div>Colaboration...</div>
               </div>
               <h4 className='micro_text'>

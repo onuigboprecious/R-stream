@@ -1,4 +1,4 @@
-*{
+* {
   font-family: 'Sora', sans-serif;
 }
 
@@ -9,17 +9,16 @@
   padding-bottom: 8rem;
 }
 
-.product_margin{
+.product_margin {
   padding-bottom: 6rem;
 }
 
 .product_text {
   font-size: 50px;
   font-weight: 800;
-
 }
 
-.product_text .qoute{
+.product_text .qoute {
   display: flex;
   padding-bottom: 0;
   color: #833ab4;
@@ -30,25 +29,25 @@
   -webkit-background-clip: text;
   background-clip: text;
 }
-.micro_text{
+.micro_text {
   padding-top: 10px;
   font-size: 15px;
   font-family: 'Sora', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
+  letter-spacing: 1px;
+  list-style-type: georgian;
 }
-
 
 .product_img:first-child {
   width: 10cm;
   height: 10cm;
-  border: rebeccapurple 1.5px solid;
+  border: #833ab4 1px solid;
   border-radius: 100px;
   transition: all 0.5s;
   align-content: center;
 }
 
-.product_img:first-child:hover{
+.product_img:first-child:hover {
   transform: scale(1.1);
-
-
+  border: #833ab4 1.8px solid;
 }

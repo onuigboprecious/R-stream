@@ -10,6 +10,7 @@ import banner_03 from '../../assets/banner_03.png';
 import banner_04 from '../../assets/banner_04.png';
 import banner_05 from '../../assets/banner_05.png';
 import Product from '../banner/product/Product'
+import Thought from '../banner/thought/Thought';
 
 const Banner = () => {
   return (
@@ -69,6 +70,7 @@ const Banner = () => {
         </Row>
       </Container>
       <Product />
+      <Thought />
     </div>
   );
 };
