@@ -32,7 +32,7 @@ const Banner = () => {
               </div>
 
               <Button variant="light" to="/" className="btn_more" type="submit">
-                Learn More ...
+                Learn More
               </Button>
             </div>
           </Col>

@@ -10,7 +10,7 @@ function Thought() {
         <Container>
       <Row xm={12} sm={12} md={12} lg={12} mb-3>
         <Col xm={12} sm={12} md={7}>
-        <img className="thought_img" src={thought} alt="product_image" />
+        <img className="  product_img mx-auto d-block" src={thought} alt="product_image" />
         </Col>
         <Col xm={12} sm={12} md={5}>
         <div className="product_text">

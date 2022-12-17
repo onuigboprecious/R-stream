@@ -11,10 +11,10 @@
 }
 .socials {
   font-size: 25px;
-  color:#f2f2f2;
+  color: #f2f2f2;
 }
-.socials:hover{
-    color:#cfcece;
+.socials:hover {
+  color: #cfcece;
 }
 
 .footer_links {
@@ -23,8 +23,8 @@
   font-family: 'Sora', sans-serif;
   font-weight: 900;
 }
-.footer_links:hover{
-    color:#cfcece;
+.footer_links:hover {
+  color: #cfcece;
 }
 .brand_name {
   margin: 5px;
@@ -35,4 +35,36 @@
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+#otp{
+display: inline-flex;
+}
+.otp_text{
+  /* font-size: 70px; */
+  font-family: 'Sora', sans-serif;
+  font-weight: 900;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------- */
+@media (min-width: 320px) and (max-width: 760px) {
+  .footer {
+    background-image: url(/src/assets/home.png);
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+    margin: 3px;
+    background-repeat: no-repeat;
+  }
+  .footer_zip {
+    padding-top: 10rem;
+  }
+  .brand_name {
+    background: linear-gradient(149deg, #ffffff 25%, #ffffff 64%, #ffffff 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 15px;
+  }
 }

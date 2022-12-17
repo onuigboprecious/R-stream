@@ -12,6 +12,8 @@ import Footer from './components/footer/Footer';
 import NavHead from './components/navbar/Navbar';
 import Login from './components/login/Login';
 import Sign from './components/sign/Sign';
+import Forgot from './components/forgot/Forget'
+import OTP from './components/forgot/OTP'
 import Live from './components/live/Live';
 import Cat from './components/cat/Cat';
 import Pod from './components/pod/Pod';
@@ -31,7 +33,8 @@ export default function App() {
           <Route path="/cat" element={<Cat />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<Sign />} />
-          <Route path="/authenticate" element={<authenticate />} />
+          <Route path="/Forgot" element={<Forgot />} />
+          <Route path="/OTP" element={<OTP />} />
           <Route path="*" element={<p>404 page not found!</p>} />
         </Routes>
       </Router>

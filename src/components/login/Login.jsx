@@ -15,6 +15,8 @@ import login_01 from '../../assets/login_01.png';
 import login_02 from '../../assets/login_02.png';
 import login_03 from '../../assets/login_03.png';
 import '../login/Login.css';
+// import '../forgot/Forget'
+import '../forgot/OTP'
 
 
 
@@ -83,7 +85,7 @@ function Login() {
 
               <div className="reset_password">
                 Forgot Password? 
-                <NavLink className="reset_password_link" as={Link} to="/sign-up">
+                <NavLink className="reset_password_link" as={Link} to="/OTP">
                   Reset!
                 </NavLink>
               </div>
