@@ -53,17 +53,27 @@
   border: #833ab4 1.8px solid;
 }
 
-
-.why_thought{
+.why_thought {
   padding-top: 5rem;
 }
 
 /* ---------------------------------------------------- */
 
 @media (min-width: 320px) and (max-width: 760px) {
-  .product_img:first-child{
- width: 7cm;
- height: 7cm;
+  .product_img:first-child {
+    width: 7cm;
+    height: 7cm;
+  }
+  .product_text {
+    font-size: 35px;
+  }
+  .product_brand {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 
-}
+  .product_img_2{
+margin-top: 2rem;
+  }
+
 }

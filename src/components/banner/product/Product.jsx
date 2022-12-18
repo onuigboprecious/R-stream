@@ -37,7 +37,7 @@ function Product() {
             </h4>
             </div>
           </Col>
-        </Row><br/>
+        </Row>
         {/* break */}
 
         <Row xm={12} sm={12} md={12} lg={12}>
@@ -58,10 +58,11 @@ function Product() {
             </h4>
             </div>
           </Col>
-          <Col xm={12} sm={12} md={7}>
+          <br/>
+          <Col xm={12} sm={12} md={7} mt-3>
           <div data-aos="fade-left">
             <img
-              className="product_img mx-auto d-block"
+              className="product_img product_img_2 mx-auto d-block"
               src={product_02}
               alt="product_image"
             />
