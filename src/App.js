@@ -25,7 +25,7 @@ export default function App() {
   //AOS animation -----
   useEffect(() => {
     AOS.init({
-      duration: 2000,
+      duration: 1000,
     });
   }, []);
   // ------------------
