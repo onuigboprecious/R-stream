@@ -1,4 +1,6 @@
+// importations
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Container,
   Row,
@@ -10,13 +12,13 @@ import {
   InputGroup
 } from 'react-bootstrap';
 import { BsFillEnvelopeFill, BsFillKeyFill } from "react-icons/bs";
-import { Link } from 'react-router-dom';
 import login_01 from '../../assets/login_01.png';
 import login_02 from '../../assets/login_02.png';
 import login_03 from '../../assets/login_03.png';
-import '../login/Login.css';
-// import '../forgot/Forget'
-import '../forgot/OTP'
+ //for OTP and Forget page
+import '../login/Login.css' 
+import '../forgot/Forget'
+
 
 
 
@@ -27,6 +29,7 @@ function Login() {
       <Container>
         <Row xm={12} sm={12} md={12} lg={12}>
           <Col xm={12} sm={12} md={6} >
+          <div data-aos="fade-right">
             <Carousel>
               <Carousel.Item>
                 <img
@@ -52,10 +55,12 @@ function Login() {
                 />
               </Carousel.Item>
             </Carousel>
+            </div>
           </Col>
 
           {/* -------------------------end of carousel----------------------- */}
           <Col className=" layout_panel xm={12} sm={12} md={6} px-0" >
+          <div data-aos="fade-left">
             <Form className="form_panel">
               <div className="intro">Welcome!</div>
               <div className="login">
@@ -85,11 +90,12 @@ function Login() {
 
               <div className="reset_password">
                 Forgot Password? 
-                <NavLink className="reset_password_link" as={Link} to="/OTP">
+                <NavLink className="reset_password_link" as={Link} to="/Forgot">
                   Reset!
                 </NavLink>
               </div>
             </Form>
+            </div>
           </Col>
         </Row>
         </Container>

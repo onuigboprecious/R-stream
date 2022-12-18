@@ -11,13 +11,16 @@ function Product() {
       <Container>
         <Row className="product_margin" xm={12} sm={12} md={12} lg={12}>
           <Col xm={12} sm={12} md={7}>
+          <div data-aos="fade-right">
             <img
               className="product_img mx-auto d-block"
               src={product_01}
               alt="product_image"
             />
+             </div>
           </Col>
           <Col xm={12} sm={12} md={5}>
+          <div data-aos="fade-left">
             <div className="product_text">
               <p className="qoute">
                 <BsChatQuote />
@@ -32,12 +35,14 @@ function Product() {
               only five centuries, but also the leap into electronic
               typesetting,
             </h4>
+            </div>
           </Col>
         </Row><br/>
         {/* break */}
 
         <Row xm={12} sm={12} md={12} lg={12}>
           <Col xm={12} sm={12} md={5}>
+          <div data-aos="fade-right">
             <div className="product_text">
               <p className="qoute">
                 <BsChatQuote />
@@ -51,13 +56,16 @@ function Product() {
               only five centuries, but also the leap into electronic
               typesetting,
             </h4>
+            </div>
           </Col>
           <Col xm={12} sm={12} md={7}>
+          <div data-aos="fade-left">
             <img
               className="product_img mx-auto d-block"
               src={product_02}
               alt="product_image"
             />
+            </div>
           </Col>
         </Row>
       </Container>

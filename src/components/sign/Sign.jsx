@@ -27,7 +27,8 @@ function Sign() {
       <Container>
       <Row xm={12} sm={12} md={12} lg={12}>
       <Col xm={12} sm={12} md={6} >
-            <Carousel>
+      <div data-aos="fade-right">
+            <Carousel >
               <Carousel.Item>
                 <img
                   className="d-block w-100"
@@ -52,10 +53,12 @@ function Sign() {
                 />
               </Carousel.Item>
             </Carousel>
+            </div>
           </Col>
 
           {/* -------------------------end of carousel----------------------- */}
           <Col className=" layout_panel_sign xm={12} sm={12} md={6} px-0">
+          <div data-aos="fade-left">
             <Form className="form_panel_sign">
               <div className="intro_sign">We're Happy you're Joining!</div>
               <div className="intro_text_sign">It's quick and easy...</div>
@@ -133,6 +136,7 @@ function Sign() {
               </Button>
          
             </Form>
+            </div>
           </Col>
         </Row>
       </Container>
