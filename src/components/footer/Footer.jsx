@@ -12,27 +12,27 @@ import {
 function Footer() {
   return (
     <div className="footer">
-      <Container className='footer_zip'>
+      <Container className="footer_zip">
         <Row>
           <Col xm={12} sm={12} md={4}>
             <Nav className="justify-content-center">
               <Nav.Item>
-                <Nav.Link className='socials' href="/home">
+                <Nav.Link className="socials" href="/home">
                   <BsFacebook />
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link className='socials' eventKey="/blog">
+                <Nav.Link className="socials" eventKey="/blog">
                   <BsTwitter />
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link  className='socials' eventKey="/legal">
+                <Nav.Link className="socials" eventKey="/legal">
                   <BsInstagram />
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link className='socials' eventKey="/help">
+                <Nav.Link className="socials" eventKey="/help">
                   <BsFillEnvelopeFill />
                 </Nav.Link>
               </Nav.Item>
@@ -41,16 +41,24 @@ function Footer() {
           <Col xm={12} sm={12} md={4}>
             <Nav className="justify-content-center">
               <Nav.Item>
-                <Nav.Link  className='footer_links' eventKey="/blog">Blog</Nav.Link>
+                <Nav.Link className="footer_links" eventKey="/blog">
+                  Blog
+                </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link  className='footer_links' eventKey="/blog">Blog</Nav.Link>
+                <Nav.Link className="footer_links" eventKey="/blog">
+                  Blog
+                </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link   className='footer_links' eventKey="/legal">legal</Nav.Link>
+                <Nav.Link className="footer_links" eventKey="/legal">
+                  legal
+                </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link  className='footer_links' eventKey="/help">help</Nav.Link>
+                <Nav.Link className="footer_links" eventKey="/help">
+                  help
+                </Nav.Link>
               </Nav.Item>
             </Nav>
           </Col>

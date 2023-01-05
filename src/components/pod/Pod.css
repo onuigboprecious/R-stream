@@ -1,0 +1,94 @@
+
+
+.sidebar {
+  width: 250px;
+  left: 0;
+  top: 0;
+  height:100%;
+  background-color:#ffffff;
+  padding-top: 90px;
+  padding: 30px;
+}
+
+.sidebar-menu .pod_list {
+  width: 100%;
+  margin-bottom: 3rem;
+  padding-left: 0.5rem;
+
+}
+
+.sidebar-menu .pod_list{
+  padding-left: 1.5rem;
+  display: block;
+  color: #000000;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.sidebar-menu .pod_list:hover {
+  background:#f2f2f2;
+  padding: 0.8rem;
+  color: #833ab4;
+  border-radius: 30px 0px 0px 30px;
+}
+
+.sidebar-menu .socials span:first-child {
+  font-size: 1.5rem;
+  padding-right: 1rem;
+}
+
+#navbar-toggle {
+  display: block;
+}
+
+#navbar-toggle {
+  width: 250px;
+}
+
+.podcast-content {
+  margin-left: 290px;
+  margin-top: 90px;
+}
+
+.podcast-header {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.podcast-content .trend-card {
+  justify-content: center;
+  width: 90%;
+  height: 5cm;
+  box-shadow: 0 3px 6px 3px rgb(0 0 0 / 30%);
+  text-align: center;
+  background: #e1e2e4;
+  border-radius: 16px;
+  padding-bottom: 3px;
+  transition: 0.2s;
+  margin-bottom: 1cm;
+  cursor: pointer;
+}
+
+.podcast-content .trend-card:hover {
+  background-color: #d79efd;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.podcast-content .item {
+  background-color: #833ab4;
+  color: #ffffff;
+  height: 4.5cm;
+  border-radius: 16px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.podcast-content .pagination {
+  padding-bottom: 60px;
+}
+.podcast-content .pagination .page-link {
+  color: #833ab4;
+}

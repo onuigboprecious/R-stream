@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 //-----------Application Components----------------------
 import Banner from './components/banner/Banner';
-import Footer from './components/footer/Footer';
+// import Footer from './components/footer/Footer';
 import NavHead from './components/navbar/Navbar';
 import Login from './components/login/Login';
 import Sign from './components/sign/Sign';
@@ -36,7 +36,7 @@ export default function App() {
         <NavHead />
         <Routes>
           <Route path="/" element={<Banner />} />
-          <Route path="/live" element={<Live />} />
+          <Route path="/live" element={<Live />} /> 
           <Route path="/pod" element={<Pod />} />
           <Route path="/cat" element={<Cat />} />
           <Route path="/login" element={<Login />} />
@@ -45,8 +45,11 @@ export default function App() {
           <Route path="/OTP" element={<OTP />} />
           <Route path="*" element={<p>404 page not found!</p>} />
         </Routes>
+        {/* <Footer /> */}
       </Router>
-      <Footer />
     </div>
   );
 }
+
+
+
