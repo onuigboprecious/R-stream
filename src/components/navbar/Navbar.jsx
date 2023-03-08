@@ -1,5 +1,5 @@
 import {Container, NavLink, Navbar, Nav, Button,  } from 'react-bootstrap';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.jpg';
 import { Link } from 'react-router-dom';
 import '../login/Login';
 import '../sign/Sign';
@@ -15,10 +15,10 @@ function NavHead() {
 
   return (
     <div className="nav_section">
-      <Navbar bg="transparent" expand="md">
+      <Navbar bg="transperant" variant="light" expand="md">
         <Container>
           <Navbar.Brand>
-            <img src={logo} alt="brand logo" height={40} />
+            <img src={logo} alt="brand logo" height={60} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

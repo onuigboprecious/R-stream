@@ -1,0 +1,15 @@
+  
+.page-link {
+  background-color: #f2f2f2;
+  border-color: #833ab4;
+  color: #833ab4;
+}
+
+.page-link:active{
+    background-color: #833ab4;
+}
+
+.active>.page-link, .page-link.active{
+    background-color: #833ab4;
+    color:#ffffff;
+}

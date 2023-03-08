@@ -1,11 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes,  } from 'react-router-dom';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 //----------React Bootstarp Dependencies----------------
 import 'react-bootstrap';
-import 'bootstrap';
+import 'bootstrap'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //-----------Application Components----------------------
@@ -19,6 +19,7 @@ import OTP from './components/forgot/OTP';
 import Live from './components/live/Live';
 import Cat from './components/cat/Cat';
 import Pod from './components/pod/Pod';
+import AlertEmail from './components/messages/Alert-email';
 import './App.css';
 
 export default function App() {
@@ -42,7 +43,9 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<Sign />} />
           <Route path="/Forgot" element={<Forgot />} />
-          <Route path="/OTP" element={<OTP />} />
+          <Route path="/verification" element={<OTP />} />
+          <Route path='/Alert' element={<AlertEmail />}  />
+
           <Route path="*" element={<p>404 page not found!</p>} />
         </Routes>
         {/* <Footer /> */}

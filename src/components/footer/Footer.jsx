@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.jpg';
 import { Nav, Col, Row, Container, Navbar } from 'react-bootstrap';
 import {
   BsFacebook,
@@ -65,9 +65,9 @@ function Footer() {
           <Col xm={12} sm={12} md={4}>
             <Nav className="justify-content-center">
               <Navbar.Brand>
-                <img src={logo} alt="brand logo" height={40} />
+                <img src={logo} alt="brand logo" height={45} />
               </Navbar.Brand>
-              <div className="brand_name">Refinipee</div>
+              <div className="brand_name">magical world</div>
             </Nav>
           </Col>
         </Row>

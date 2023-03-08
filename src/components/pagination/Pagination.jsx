@@ -1,4 +1,5 @@
 import Pagination from 'react-bootstrap/Pagination';
+import '../pagination/Pagination.css'
 
 let active = 2;
 let items = [];
@@ -12,7 +13,7 @@ for (let number = 1; number <= 5; number++) {
 
 function pagination() {
     return ( 
-  <div>
+  <div className='pagination_color'>
     <Pagination size="sm">{items}</Pagination>
   </div>
     );
