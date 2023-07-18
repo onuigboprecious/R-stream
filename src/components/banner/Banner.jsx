@@ -43,8 +43,8 @@ const Banner = () => {
 
           <Col xm={12} sm={12} md={6}>
           <div data-aos="fade-left">
-            <Carousel>
-              <Carousel.Item>
+            <Carousel fade>
+              <Carousel.Item interval={7000}>
                 <img
                   className="d-block w-100"
                   src={banner_03}
@@ -53,7 +53,7 @@ const Banner = () => {
                 <Carousel.Caption></Carousel.Caption>
               </Carousel.Item>
 
-              <Carousel.Item>
+              <Carousel.Item interval={7000}>
                 <img
                   className="d-block w-100"
                   src={banner_04}
@@ -62,7 +62,7 @@ const Banner = () => {
                 <Carousel.Caption></Carousel.Caption>
               </Carousel.Item>
 
-              <Carousel.Item>
+              <Carousel.Item interval={7000}>
                 <img
                   className="d-block w-100"
                   src={banner_05}

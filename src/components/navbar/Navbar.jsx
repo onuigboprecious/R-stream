@@ -1,18 +1,14 @@
-import {Container, NavLink, Navbar, Nav, Button,  } from 'react-bootstrap';
+import { Container, NavLink, Navbar, Nav, Button } from 'react-bootstrap';
 import logo from '../../assets/logo.jpg';
 import { Link } from 'react-router-dom';
 import '../login/Login';
 import '../sign/Sign';
 import '../live/Live';
 import '../cat/Cat';
-import  '../pod/Pod' 
+import '../pod/Pod';
 import './Navbar.css';
 
-
-
 function NavHead() {
-
-
   return (
     <div className="nav_section">
       <Navbar bg="transperant" variant="light" expand="md">
@@ -27,22 +23,22 @@ function NavHead() {
               style={{ maxHeight: 'auto' }}
               navbarScroll
             >
-              <NavLink as={Link} to="/">
+              <NavLink as={Link} to="/" className='link'>
                 Home
               </NavLink>
 
-              <NavLink as={Link} to="/live">
+              <NavLink as={Link} to="/live" className='link'>
                 Live Stream
               </NavLink>
-              <NavLink as={Link} to="./pod">
+              <NavLink as={Link} to="./pod" className='link'>
                 Podcast
               </NavLink>
-              <NavLink as={Link} to="/cat">
+              <NavLink as={Link} to="/cat" className='link'>
                 Categories
               </NavLink>
             </Nav>
             <Nav className="d-flex action">
-                <Button
+              <Button
                 variant="Light"
                 className="btn_login m-2"
                 as={Link}

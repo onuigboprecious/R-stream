@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;500;600;800&family=Signika:wght@300;400;500&display=swap');
+
 .footer {
   background-image: url(/src/assets/footer.png);
   background-size: cover;
@@ -9,44 +11,25 @@
 .footer_zip {
   padding-top: 12rem;
 }
-.socials {
+a.socials.nav-link {
   font-size: 25px;
-  color: #f2f2f2;
-}
-.socials:hover {
-  color: #cfcece;
-}
-
-.footer_links {
   color: #ffffff;
-  font-size: 12px;
-  font-family: 'Sora', sans-serif;
-  font-weight: 900;
 }
-.footer_links:hover {
+a.socials.nav-link:hover {
+  color: #c5c2c2;
+}
+
+.quick_links{
+  color: #ffffff;
+  font-size: 14px;
+  font-family: 'Karla', sans-serif;
+  font-family: 'Signika', sans-serif;
+  font-weight:500;
+  text-decoration: none;
+}
+.quick_links:hover {
   color: #cfcece;
 }
-.brand_name {
-  margin: 5px;
-  font-size: 20px;
-  font-family: 'Sora', sans-serif;
-  font-weight: 900;
-  background: linear-gradient(149deg, #833ab4 25%, #d400d4 64%, #ee82ee 100%);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-#otp{
-display: inline-flex;
-}
-.otp_text{
-  /* font-size: 70px; */
-  font-family: 'Sora', sans-serif;
-  font-weight: 900;
-  text-align: center;
-}
-
 /* --------------------------------------------------------------- */
 @media (min-width: 320px) and (max-width: 760px) {
   .footer {
@@ -60,11 +43,27 @@ display: inline-flex;
   .footer_zip {
     padding-top: 10rem;
   }
-  .brand_name {
-    background: linear-gradient(149deg, #ffffff 25%, #ffffff 64%, #ffffff 100%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    font-size: 8px !important;
-  }
+ 
+
+  
+a.socials.nav-link {
+  font-size: 15px;
+  color: #ffffff;
+}
+a.socials.nav-link:hover {
+  color: #ebebeb;
+}
+
+.quick_links{
+  color: #ffffff;
+  font-size: 12px;
+  font-weight:800;
+  text-decoration: none;
+}
+.quick_links:hover {
+  color: #cfcece;
+}
+img.brand_logo{
+  display: none;
+}
 }

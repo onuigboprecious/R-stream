@@ -12,12 +12,13 @@ import {
   NavLink,
   InputGroup,
 } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import { BsFillEnvelopeFill, BsFillKeyFill } from 'react-icons/bs';
 import login_01 from '../../assets/login_01.png';
 import login_02 from '../../assets/login_02.png';
 import login_03 from '../../assets/login_03.png';
 //for OTP and Forget page
-import '../login/Login.css';
+import './Login.css';
 import '../forgot/Forget';
 //-----------------------------
 
@@ -25,24 +26,29 @@ import '../forgot/Forget';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await axios.post('https://podcast-staging.onrender.com/api/v1/auth/login', {
-        email: email,
-        password: password
-      });
+      const response = await axios.post(
+        'https://podcast-staging.onrender.com/api/v1/auth/login',
+        {
+          email: email,
+          password: password,
+        }
+      );
 
       console.log(response.data);
       // handle successful login here
+  
+      navigate('/pod'); // redirect to verification page on success
     } catch (error) {
       console.error(error);
       // handle login error here
     }
-  }
-
+  };
 
   return (
     <div className="Login_section">

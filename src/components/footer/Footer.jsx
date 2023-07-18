@@ -1,7 +1,12 @@
 import React from 'react';
 import './Footer.css';
 import logo from '../../assets/logo.jpg';
-import { Nav, Col, Row, Container, Navbar } from 'react-bootstrap';
+import '../pages/about';
+import '../pages/fqa';
+import '../pages/price';
+import '../pages/support'
+import { Link } from 'react-router-dom';
+import { Nav, Col, Row, Container, Navbar, NavLink } from 'react-bootstrap';
 import {
   BsFacebook,
   BsTwitter,
@@ -17,57 +22,56 @@ function Footer() {
           <Col xm={12} sm={12} md={4}>
             <Nav className="justify-content-center">
               <Nav.Item>
-                <Nav.Link className="socials" href="/home">
+                <Nav.Link className="socials" href="/facebook">
                   <BsFacebook />
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link className="socials" eventKey="/blog">
+                <Nav.Link className="socials" eventKey="/twitter">
                   <BsTwitter />
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link className="socials" eventKey="/legal">
+                <Nav.Link className="socials" eventKey="/instagram">
                   <BsInstagram />
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link className="socials" eventKey="/help">
+                <Nav.Link className="socials" eventKey="/Email">
                   <BsFillEnvelopeFill />
                 </Nav.Link>
               </Nav.Item>
             </Nav>
           </Col>
           <Col xm={12} sm={12} md={4}>
-            <Nav className="justify-content-center">
-              <Nav.Item>
-                <Nav.Link className="footer_links" eventKey="/blog">
-                  Blog
-                </Nav.Link>
+            <Nav className="quick_links justify-content-center">
+              <Nav.Item> 
+                <NavLink as={Link} to="./About" className='quick_links'>
+                  About
+                </NavLink>
+              </Nav.Item >
+              <Nav.Item >
+                <NavLink as={Link} to="./price" className='quick_links'>
+                  Pricing
+                </NavLink>
               </Nav.Item>
-              <Nav.Item>
-                <Nav.Link className="footer_links" eventKey="/blog">
-                  Blog
-                </Nav.Link>
+              <Nav.Item >
+                <NavLink as={Link} to="/fqa" className='quick_links'> 
+                  FAQs
+                </NavLink>
               </Nav.Item>
-              <Nav.Item>
-                <Nav.Link className="footer_links" eventKey="/legal">
-                  legal
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link className="footer_links" eventKey="/help">
-                  help
-                </Nav.Link>
-              </Nav.Item>
+              <Nav.Item >
+                <NavLink as={Link} to="./support" className='quick_links'>
+                  Support
+                </NavLink>
+              </Nav.Item >
             </Nav>
           </Col>
           <Col xm={12} sm={12} md={4}>
             <Nav className="justify-content-center">
               <Navbar.Brand>
-                <img src={logo} alt="brand logo" height={45} />
+                <img src={logo} alt="brand logo" height={45} className='brand_logo'/>
               </Navbar.Brand>
-              <div className="brand_name">magical world</div>
             </Nav>
           </Col>
         </Row>

@@ -11,30 +11,29 @@ function Product() {
       <Container>
         <Row className="product_margin" xm={12} sm={12} md={12} lg={12}>
           <Col xm={12} sm={12} md={7}>
-          <div data-aos="fade-right">
-            <img
-              className="product_img mx-auto d-block"
-              src={product_01}
-              alt="product_image"
-            />
-             </div>
+            <div data-aos="fade-right">
+              <img
+                className="product_img mx-auto d-block"
+                src={product_01}
+                alt="product_image"
+              />
+            </div>
           </Col>
           <Col xm={12} sm={12} md={5}>
-          <div data-aos="fade-left">
-            <div className="product_text">
-              <p className="qoute">
-                <BsChatQuote />
-              </p>
-              Powering the most podcasts <div>worldwide...</div>
-            </div>
+            <div data-aos="fade-left">
+              <div className="product_text">
+                <p className="qoute">
+                  <BsChatQuote />
+                </p>
+                Powering the most podcasts <div>worldwide...</div>
+              </div>
 
-            <h4 className="micro_text">
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book. It has survived not
-              only five centuries, but also the leap into electronic
-              typesetting,
-            </h4>
+              <h4 className="micro_text">
+                Why settle for mediocrity when you can be at the top? Our
+                platform offers an array of powerful tools and features designed
+                to streamline your podcasting journey. From seamless hosting to
+                advanced analytics, we've got you covered.
+              </h4>
             </div>
           </Col>
         </Row>
@@ -42,30 +41,31 @@ function Product() {
 
         <Row xm={12} sm={12} md={12} lg={12}>
           <Col xm={12} sm={12} md={5}>
-          <div data-aos="fade-right">
-            <div className="product_text">
-              <p className="qoute">
-                <BsChatQuote />
-              </p>
-              Live streaming <div>Colaboration...</div>
-            </div>
-            <h4 className="micro_text">
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book. It has survived not
-              only five centuries, but also the leap into electronic
-              typesetting,
-            </h4>
+            <div data-aos="fade-right">
+              <div className="product_text">
+                <p className="qoute">
+                  <BsChatQuote />
+                </p>
+                Live streaming <div>Colaboration...</div>
+              </div>
+              <h4 className="micro_text">
+                Experience seamless collaboration like never before. With
+                LiveStreamCo, you can connect with colleagues, partners, or
+                friends from anywhere in the world. Share your screen, host
+                panel discussions, conduct live interviews, and brainstorm
+                together in real time. Our platform supports multiple
+                participants, ensuring everyone's voice is heard.
+              </h4>
             </div>
           </Col>
-          <br/>
+          <br />
           <Col xm={12} sm={12} md={7} mt-3>
-          <div data-aos="fade-left">
-            <img
-              className="product_img product_img_2 mx-auto d-block"
-              src={product_02}
-              alt="product_image"
-            />
+            <div data-aos="fade-left">
+              <img
+                className="product_img product_img_2 mx-auto d-block"
+                src={product_02}
+                alt="product_image"
+              />
             </div>
           </Col>
         </Row>

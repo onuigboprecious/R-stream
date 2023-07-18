@@ -53,7 +53,7 @@ function Sign() {
       <Container>
         <Row xm={12} sm={12} md={12} lg={12}>
           <Col xm={12} sm={12} md={6}>
-            <Carousel>
+            <Carousel fade>
               <Carousel.Item>
                 <img
                   className="d-block w-100"

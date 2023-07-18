@@ -1,22 +1,128 @@
+import '../live/Live.css';
+import { Row, Col, Container } from 'react-bootstrap';
+import { BsFillShareFill } from 'react-icons/bs';
+import { IoMdAdd } from 'react-icons/io';
+import { AiFillHeart } from 'react-icons/ai';
+import { FaCloudDownloadAlt } from 'react-icons/fa';
+import { BsFillBookmarkCheckFill } from 'react-icons/bs';
+import { FiExternalLink } from 'react-icons/fi';
 import React from 'react';
-import './Live.css';
-import { Row, Col } from 'react-bootstrap';
+// import { useState } from 'react';
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+// import { Thumbs } from 'swiper';
 
 function Live() {
   return (
+    <Container>
+      <Row xm={12} sm={12} md={12} lg={12}>
+        <Col xm={12} sm={12} md={3}>
+        <div data-aos="fade-right">
+          <div id="left_view" className="sidebar">
+            <div className="trend_live">
+              <p>Trending Live</p>
+              <a href="#" className="trend_1">
+                {' '}
+                Abuja Men <FiExternalLink />{' '}
+              </a>
+              <a href="#" className="trend_1">
+                {' '}
+                Elon Musk's interview <FiExternalLink />{' '}
+              </a>
+              <a href="#" className="trend_1">
+                {' '}
+                CBN_Nigeria <FiExternalLink />{' '}
+              </a>
+              <a href="#" className="trend_1">
+                {' '}
+                Nolloyworrd <FiExternalLink />{' '}
+              </a>
+              <a href="#" className="trend_1">
+                {' '}
+                Peter Obi <FiExternalLink />{' '}
+              </a>
+            </div>
+          </div>
 
-    <Row xm={12} sm={12} md={12} lg={12}>
-      <Col xm={12} sm={12} md={4}>
-      <div className='sidebar'>
-      xt of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-      when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-      It has survived not only five centuries, but also the leap into electronic
-        </div>
-      </Col>
-      <Col xm={12} sm={12} md={8}>rinter took a galley of type and scrambled it to make a type specimen book. 
-      It has survived not only five centuries, but also the leap into electronic</Col> 
-     
-    </Row>
+
+          <div id="left_view" className="sidebar">
+            <div className="trend_live">
+              <p>Suggested Live</p>
+              <a href="#" className="trend_1">
+                {' '}
+                Tvc News <FiExternalLink />{' '}
+              </a>
+              <a href="#" className="trend_1">
+                {' '}
+                Elon Musk's interview <FiExternalLink />{' '}
+              </a>
+              <a href="#" className="trend_1">
+                {' '}
+                CBN_Nigeria <FiExternalLink />{' '}
+              </a>
+              <a href="#" className="trend_1">
+                {' '}
+                International Womens Day <FiExternalLink />{' '}
+              </a>
+              <a href="#" className="trend_1">
+                {' '}
+                Nation's Cup <FiExternalLink />{' '}
+              </a>
+            </div>
+          </div>
+          </div>
+        </Col>
+        <Col xm={12} sm={12} md={8}>
+          <div className="steam_View">
+            <>
+              <Swiper
+                spaceBetween={50}
+                slidesPerView={1}
+                onSlideChange={() => console.log('slide change')}
+                onSwiper={(swiper) => console.log(swiper)}
+              >
+                <SwiperSlide>Slide 1</SwiperSlide>
+                <SwiperSlide>Slide 2</SwiperSlide>
+                <SwiperSlide>Slide 3</SwiperSlide>
+                <SwiperSlide>Slide 4</SwiperSlide>
+                ...
+              </Swiper>
+            </>
+            </div>
+            </Col>
+            <Col xm={12} sm={12} md={1}>
+            <div data-aos="fade-left">
+            <div className="media_bar">
+              <div className="media_button">
+                {' '}
+                <BsFillBookmarkCheckFill />
+              </div>
+              <div className="media_button">
+                {' '}
+                <IoMdAdd />{' '}
+              </div>
+              <div className="media_button">
+                {' '}
+                <AiFillHeart />{' '}
+              </div>
+              <div className="media_button">
+                {' '}
+                <FaCloudDownloadAlt />{' '}
+              </div>
+              <div className="media_button">
+                {' '}
+                <BsFillShareFill />{' '}
+              </div>
+            </div>
+            </div>
+            </Col>
+      </Row>
+    </Container>
   );
 }
 

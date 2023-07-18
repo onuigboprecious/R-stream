@@ -1,9 +1,9 @@
 #left_view {
   color: rgb(0, 0, 0);
   border-radius: 5px;
-  margin: 10px 10px;
+  margin: 6px 6px;
   padding: 1rem;
-  height: 5.5cm;
+  height: 2cm;
   background: #e6e6e6;
 }
 
@@ -29,27 +29,26 @@
 
 .steam_View {
   background-color: #ffffff;
-  height: 10cm;
+  height: 12.3cm;
   border-radius: 5px;
   margin: 10px 10px;
   padding: 1rem;
 }
 .media_bar {
-  position: sticky;
+  /* position: fixed; */
+  text-align: center;
+  align-items: center;
   background: #e6e6e6;
-  height: 11.5cm;
   color: #833ab4;
-  margin: 0.5rem ;
-  padding:0.1rem;
+  margin: 1rem;
+  padding: 1rem;
   border-radius: 5px;
-  display:inline-block;
 }
-
 .media_button {
   color: #833ab4;
-  padding: 1rem;
+  padding: 2rem;
   margin: 1rem;
- 
+  display: inline;
 }
 
 .swiper {

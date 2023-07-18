@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;500;600;800&family=Signika:wght@300;400;500&display=swap');
+
 .banner_layout {
   margin-top: 3rem;
 }
 
 .banner_intro {
   font-size: 60px;
-  font-family: 'Sora', sans-serif;
-  font-weight: 900;
+  font-family: 'Karla', sans-serif;
+  font-family: 'Signika', sans-serif;
+  font-weight: 800;
   /* ff 3.6+ */
   background: -moz-linear-gradient(
     149deg,
@@ -46,9 +49,10 @@
 }
 
 .banner_text {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 30px;
-  font-family: 'Sora', sans-serif;
+  font-family: 'Karla', sans-serif;
+  font-family: 'Signika', sans-serif;
   margin-top: 20px;
   padding-bottom: 10px;
   color: #2f2e41;
@@ -58,7 +62,7 @@
   margin-top: 1rem;
   margin-bottom: 20px;
   font-size: large;
-  font-weight: 600;
+  font-weight: 800;
   color: #ffffff;
   border-radius: 20px;
   padding: 10px;
@@ -75,13 +79,15 @@
   }
   .banner_intro {
     font-size: 50px;
-    font-family: 'Sora', sans-serif;
-    font-weight: 900;
+    font-family: 'Karla', sans-serif;
+    font-family: 'Signika', sans-serif;
+    font-weight: 200;
   }
   .banner_text {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 20px;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Karla', sans-serif;
+    font-family: 'Signika', sans-serif;
     margin-top: 20px;
     padding-bottom: 10px;
     color: #2f2e41;
