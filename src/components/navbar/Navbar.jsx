@@ -1,14 +1,45 @@
+import React from 'react';
 import { Container, NavLink, Navbar, Nav, Button } from 'react-bootstrap';
 import logo from '../../assets/logo.jpg';
 import { Link } from 'react-router-dom';
-import '../login/Login';
-import '../sign/Sign';
+import LoginButton from '../buttons/loginButton';
+import SignupButton from '../buttons/signupButton';
+import { supabase } from '../../Auth/SupabaseAuth';
 import '../live/Live';
 import '../cat/Cat';
 import '../pod/Pod';
 import './Navbar.css';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function NavHead() {
+const NavHead = () => {
+  const navigate = useNavigate();
+  const [user, setUser] = useState(false);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
+        console.log('User signed in:', user); // Debug
+        setUser(user);
+      } catch (error) {
+        console.error('Error fetching user:', error);
+        setUser(null);
+      }
+    };
+    fetchUserData();
+  }, []);
+
+  const handleSignout = async () => {
+    await supabase.auth.signOut();
+    setUser(null); // Clear the user state
+    localStorage.clear(); // To clear Local Storage
+    sessionStorage.clear(); // To clear Session Storage
+    navigate('/');
+  };
+
   return (
     <div className="nav_section">
       <Navbar bg="transperant" variant="light" expand="md">
@@ -23,44 +54,46 @@ function NavHead() {
               style={{ maxHeight: 'auto' }}
               navbarScroll
             >
-              <NavLink as={Link} to="/" className='link'>
+              <NavLink as={Link} to="/" className="link">
                 Home
               </NavLink>
 
-              <NavLink as={Link} to="/live" className='link'>
+              <NavLink as={Link} to="/live" className="link">
                 Live Stream
               </NavLink>
-              <NavLink as={Link} to="./pod" className='link'>
+              <NavLink as={Link} to="./pod" className="link">
                 Podcast
               </NavLink>
-              <NavLink as={Link} to="/cat" className='link'>
+              <NavLink as={Link} to="/cat" className="link">
                 Categories
               </NavLink>
             </Nav>
             <Nav className="d-flex action">
-              <Button
-                variant="Light"
-                className="btn_login m-2"
-                as={Link}
-                to="/login"
-              >
-                Login
-              </Button>
-
-              <Button
-                variant="outline-Light"
-                className="btn_sign_up m-2"
-                as={Link}
-                to="/sign-up"
-              >
-                Sign up
-              </Button>
+              {user ? (
+                <>
+                  <p>Hello!, {user.email}</p>
+                  <Button
+                    onClick={handleSignout}
+                    variant="outline-light"
+                    className="btn_sign_up m-2"
+                    as={Link}
+                    to="/"
+                  >
+                    Logout
+                  </Button>
+                </>
+              ) : (
+                <>
+                  {' '}
+                  <LoginButton /> <SignupButton />
+                </>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>
   );
-}
+};
 
 export default NavHead;

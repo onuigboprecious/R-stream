@@ -76,23 +76,24 @@
   color: #833ab4;
 }
 
-
 /* ---------------------------------------------------------------- */
 @media (min-width: 320px) and (max-width: 760px) {
-  .layout_panel_sign{
+  .layout_panel_sign {
     column-gap: normal;
     margin-top: 1rem;
-    }
+  }
 
-    
-.form_panel_sign{
-  background-color: #e6e6e6;
-  border-radius: 10px;
-  width: auto;
-  color: #000000;
-  margin-left: 15px;
-  margin-right: 15px;
-  padding: 2rem;
-}
+  .form_panel_sign {
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    width: auto;
+    color: #000000;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 2rem;
+  }
 
+  .Sign_section .signin_slide {
+    display: none;
+  }
 }

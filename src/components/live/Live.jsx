@@ -1,5 +1,5 @@
 import '../live/Live.css';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col, Container, Button } from 'react-bootstrap';
 import { BsFillShareFill } from 'react-icons/bs';
 import { IoMdAdd } from 'react-icons/io';
 import { AiFillHeart } from 'react-icons/ai';
@@ -26,26 +26,26 @@ function Live() {
           <div id="left_view" className="sidebar">
             <div className="trend_live">
               <p>Trending Live</p>
-              <a href="#" className="trend_1">
+              <Button href="/#" className="trend_1">
                 {' '}
                 Abuja Men <FiExternalLink />{' '}
-              </a>
-              <a href="#" className="trend_1">
+              </Button>
+              <Button href="/#" className="trend_1">
                 {' '}
                 Elon Musk's interview <FiExternalLink />{' '}
-              </a>
-              <a href="#" className="trend_1">
+              </Button>
+              <Button href="/#" className="trend_1">
                 {' '}
                 CBN_Nigeria <FiExternalLink />{' '}
-              </a>
-              <a href="#" className="trend_1">
+              </Button>
+              <Button href="/#" className="trend_1">
                 {' '}
                 Nolloyworrd <FiExternalLink />{' '}
-              </a>
-              <a href="#" className="trend_1">
+              </Button>
+              <Button href="/#" className="trend_1">
                 {' '}
                 Peter Obi <FiExternalLink />{' '}
-              </a>
+              </Button>
             </div>
           </div>
 
@@ -53,26 +53,26 @@ function Live() {
           <div id="left_view" className="sidebar">
             <div className="trend_live">
               <p>Suggested Live</p>
-              <a href="#" className="trend_1">
+              <Button href="#" className="trend_1">
                 {' '}
                 Tvc News <FiExternalLink />{' '}
-              </a>
-              <a href="#" className="trend_1">
+              </Button>
+              <Button href="#" className="trend_1">
                 {' '}
                 Elon Musk's interview <FiExternalLink />{' '}
-              </a>
-              <a href="#" className="trend_1">
+              </Button>
+              <Button href="#" className="trend_1">
                 {' '}
                 CBN_Nigeria <FiExternalLink />{' '}
-              </a>
-              <a href="#" className="trend_1">
+              </Button>
+              <Button href="#" className="trend_1">
                 {' '}
                 International Womens Day <FiExternalLink />{' '}
-              </a>
-              <a href="#" className="trend_1">
+              </Button>
+              <Button href="#" className="trend_1">
                 {' '}
                 Nation's Cup <FiExternalLink />{' '}
-              </a>
+              </Button>
             </div>
           </div>
           </div>

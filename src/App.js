@@ -1,16 +1,13 @@
-import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 //----------React Bootstarp Dependencies----------------
 import 'react-bootstrap';
-import 'bootstrap';
+// import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 //-----------Application Components----------------------
 import Banner from './components/banner/Banner';
-// import Footer from './components/footer/Footer';
 import NavHead from './components/navbar/Navbar';
 import Login from './components/login/Login';
 import Sign from './components/sign/Sign';
@@ -28,6 +25,10 @@ import About from './components/pages/about';
 import Support from './components/pages/support';
 import FAQ from './components/pages/fqa';
 import Price from './components/pages/price';
+import LoginButton from './components/buttons/loginButton';
+import SignupButton from './components/buttons/signupButton';
+import SignoutButton from './components/buttons/signoutButton';
+
 export default function App() {
   //AOS animation -----
   useEffect(() => {
@@ -35,8 +36,6 @@ export default function App() {
       duration: 1000,
     });
   }, []);
-  // ------------------
-
   return (
     <div className="App">
       <Router>
@@ -53,11 +52,14 @@ export default function App() {
           <Route path="/Alert" element={<AlertEmail />} />
           <Route path="/reset-password" element={<NewPassword />} />
           <Route path="/resend-verification" element={<ResendOTP />} />
-          <Route path='/update-password' element={<ChangePassword />} />
-          <Route path='/about' element={<About/>} />
-          <Route path='/support' element={<Support />} />
-          <Route path='/fqa' element={<FAQ />} />
-          <Route path='price' element={<Price />} />
+          <Route path="/update-password" element={<ChangePassword />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/fqa" element={<FAQ />} />
+          <Route path="price" element={<Price />} />
+          <Route path="sign-up" element={<SignupButton />} />
+          <Route path="sign-out" element={<SignoutButton />} />
+          <Route path="login" element={<LoginButton />} />
           <Route path="*" element={<p>404 page not found!</p>} />
         </Routes>
         {/* <Footer /> */}

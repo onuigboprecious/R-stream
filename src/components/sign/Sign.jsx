@@ -1,7 +1,7 @@
-import React from 'react';
-import { useState } from 'react';
-import { useNavigate,  } from 'react-router-dom'; 
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { signUp } from '../../Auth/SupabaseAuth';
+import Loader from '../messages/load';
 import {
   Container,
   Row,
@@ -12,12 +12,7 @@ import {
   NavLink,
   InputGroup,
 } from 'react-bootstrap';
-import {
-  BsFillPersonCheckFill,
-  BsFillEnvelopeFill,
-  BsFillKeyFill,
-  BsFillPersonFill,
-} from 'react-icons/bs';
+import { BsFillEnvelopeFill, BsFillKeyFill } from 'react-icons/bs';
 import '../sign/Sign.css';
 import { Link } from 'react-router-dom';
 import sign_01 from '../../assets/sign_01.png';
@@ -25,34 +20,36 @@ import sign_02 from '../../assets/sign_02.png';
 import sign_03 from '../../assets/sign_03.png';
 
 function Sign() {
-  const [fullName, setFullName] = useState('');
-  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [cPassword, setCPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-  const navigate = useNavigate(); 
-
-  
-  const handleRegister = (e) => {
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+  const handleSignUp = async (e) => {
     e.preventDefault();
-    const userData = { fullName, username, email, password, cPassword };
-    axios.post('https://podcast-staging.onrender.com/api/v1/auth/register', userData)
-      .then((response) => {
-        console.log(response.data); // handle response
+
+    try {
+      setIsLoading(true); // Show the loader when the form is submitted
+
+      const user = await signUp(email, password);
+      console.log('User signed up:', user);
+      // Simulate a delay of 5 seconds before hiding the loader
+        setTimeout(() => {
+        setIsLoading(false); // Hide the loader after the delay
         navigate('/verification'); // redirect to verification page on success
-      })
-      .catch((error) => {
-        console.log(error.response.data); // handle error
-        navigate('/Alert');
-      });
+        // You can add further logic here, such as redirecting to another page or displaying a success message.
+      }, 5000);
+    } catch (error) {
+      setError(error.message);
+      setIsLoading(false); // Hide the loader if an error occurs
+    }
   };
 
   return (
     <div className="Sign_section">
       <Container>
         <Row xm={12} sm={12} md={12} lg={12}>
-          <Col xm={12} sm={12} md={6}>
+          <Col xm={12} sm={12} md={6} className="signin_slide">
             <Carousel fade>
               <Carousel.Item>
                 <img
@@ -82,8 +79,7 @@ function Sign() {
 
           {/* -------------------------end of carousel----------------------- */}
           <Col className=" layout_panel_sign xm={12} sm={12} md={6} px-0">
-            <Form className="form_panel_sign" onSubmit={handleRegister}>
-              {errorMessage && <p>{setErrorMessage}</p>}
+            <Form className="form_panel_sign" onSubmit={handleSignUp}>
               <div className="intro_sign">We're Happy you're Joining!</div>
               <div className="intro_text_sign">It's quick and easy...</div>
               <div className="Sign">
@@ -92,41 +88,6 @@ function Sign() {
                   Login
                 </NavLink>
               </div>
-
-              <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1" className="sign_icons">
-                  {' '}
-                  <BsFillPersonCheckFill />{' '}
-                </InputGroup.Text>
-                <Form.Control
-                  placeholder="Full Name"
-                  aria-label="name"
-                  aria-describedby="basic-addon1"
-                  input
-                  type="text"
-                  id="fullName"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                />
-              </InputGroup>
-
-              <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1" className="sign_icons">
-                  {' '}
-                  <BsFillPersonFill />{' '}
-                </InputGroup.Text>
-                <Form.Control
-                  placeholder="Username"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                  input
-                  type="text"
-                  id="username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                />
-              </InputGroup>
-
               <InputGroup className="mb-3">
                 <InputGroup.Text id="basic-addon1" className="sign_icons">
                   {' '}
@@ -139,9 +100,10 @@ function Sign() {
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  required
+                  autocomplete="on"
                 />
               </InputGroup>
-
               <InputGroup className="mb-3" controlId="formGroupPassword">
                 <InputGroup.Text id="basic-addon1" className="sign_icons">
                   {' '}
@@ -154,21 +116,8 @@ function Sign() {
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                />
-              </InputGroup>
-
-              <InputGroup className="mb-3" controlId="formGroupPassword">
-                <InputGroup.Text id="basic-addon1" className="sign_icons">
-                  {' '}
-                  <BsFillKeyFill />{' '}
-                </InputGroup.Text>
-                <Form.Control
-                  placeholder="Repeat Password"
-                  input
-                  type="password"
-                  id="cPassword"
-                  value={cPassword}
-                  onChange={(e) => setCPassword(e.target.value)}
+                  required
+                  autocomplete="on"
                 />
               </InputGroup>
 
@@ -183,9 +132,23 @@ function Sign() {
                 </div>
               </div>
 
-              <Button variant="light" className="btn_Sign_page" type="submit">
-                Sign Up
-              </Button>
+              {isLoading ? (
+                // Show the loader when isLoading is true
+                <div>
+                  <Loader />
+                </div>
+              ) : (
+                // Show the "Sign Up" button when isLoading is false
+                <Button
+                  variant="light"
+                  className="btn_Sign_page"
+                  type="submit"
+                  onClick={handleSignUp}
+                >
+                  {isLoading ? 'Signing Up...' : 'Sign Up'}
+                </Button>
+              )}
+              {error && <div variant="danger">{error}</div>}
             </Form>
           </Col>
         </Row>
@@ -193,5 +156,4 @@ function Sign() {
     </div>
   );
 }
-
 export default Sign;
