@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, NavLink, Navbar, Nav, Button } from 'react-bootstrap';
+import { Container, NavLink, Navbar, Nav, Button, } from 'react-bootstrap';
+import { FcApproval } from 'react-icons/fc';
 import logo from '../../assets/logo.jpg';
 import { Link } from 'react-router-dom';
 import LoginButton from '../buttons/loginButton';
@@ -41,7 +42,7 @@ const NavHead = () => {
   };
 
   return (
-    <div className="nav_section">
+    <div className="nav_section ">
       <Navbar bg="transperant" variant="light" expand="md">
         <Container>
           <Navbar.Brand>
@@ -50,10 +51,11 @@ const NavHead = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav
-              className="me-auto my-5 my-lg-0"
+              className="me-auto my-5 my-lg-0 justify-content-center"
               style={{ maxHeight: 'auto' }}
               navbarScroll
             >
+
               <NavLink as={Link} to="/" className="link">
                 Home
               </NavLink>
@@ -70,8 +72,10 @@ const NavHead = () => {
             </Nav>
             <Nav className="d-flex action">
               {user ? (
-                <>
-                  <p>Hello!, {user.email}</p>
+                <div className="signout_panel">
+                  <text>
+                    Hello!, {user.email} <FcApproval />
+                  </text>
                   <Button
                     onClick={handleSignout}
                     variant="outline-light"
@@ -81,7 +85,7 @@ const NavHead = () => {
                   >
                     Logout
                   </Button>
-                </>
+                </div>
               ) : (
                 <>
                   {' '}

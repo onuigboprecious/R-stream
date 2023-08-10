@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { signIn } from '../../Auth/SupabaseAuth';
+import Alert from 'react-bootstrap/Alert';
 import {
   Container,
   Row,
@@ -100,7 +101,12 @@ function Login() {
                 <span>{isLoading ? 'Loading...' : 'Login'}</span>
               </Button>
 
-              {error && <div>{error}</div>}
+              {/* {error && <div>{error}</div>} */}
+
+              <Alert variant="danger">
+                {error && <div>{error}</div>}
+              </Alert>
+
               <div className="reset_password">
                 Forgot Password?
                 <NavLink className="reset_password_link" as={Link} to="/Forgot">

@@ -1,120 +1,84 @@
-.sidebar {
-  left: 0;
-  top: 0;
-  height:100%;
-  background-color:#ffffff;
-  padding: 10px;
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;500;600;800&family=Signika:wght@300;400;500&display=swap');
 
-.sidebar-menu .pod_list {
-  width: 100%;
-  margin-bottom: 1rem;
-  padding-left: 0.5rem;
-
-}
-
-.sidebar-menu .pod_list{
-  padding-left: 1.5rem;
-  display: block;
-  background: #ffffff;
-  text-decoration: none;
-  transition: all 0.4s;
-}
-
-.sidebar-menu .pod_list:hover {
-  background:#f2f2f2;
-  padding: 0.1rem;
-  transform: scale(1.1);
-  border-radius: 30px 0px 0px 30px;
-  text-align: center;
-}
-
-.sidebar-menu .pod_list .socials{
-  color: #833ab4;
-  font-size: 15px;
-  padding-top: 0.8rem;
-  padding-bottom: 0.8rem;
-}
-.sidebar-menu .socials span:first-child {
-  font-size: 1.5rem;
-  margin-right: 12rem;
-}
-
-#navbar-toggle {
-  display: block;
-}
-
-#navbar-toggle {
-  width: 250px;
-}
-
-.podcast-content {
-  margin-left: 290px;
-  margin-top: 90px;
-}
-
-.podcast-header {
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-
-.podcast-content .trendBar {
-  background-color: #833ab4;
-  color: #ffffff;
-  height: 4.5cm;
-  border-radius: 16px;
-  width: 100%;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-/* .podcast-content .pagination {
-  padding-bottom: 60px;
-} */
-.podcast-content .pagination .page-link {
+.pagination .page-link {
   color: #833ab4;
 }
 
-
-.display_page{
-  margin: 2rem;
+.trend_card_slider .pod_slide {
+  background-color: #9422f1;
 }
-.trend_card_slider{
-  justify-content: center;
-  width: auto;
-  height: 250px;
-  box-shadow: 0 3px 6px 3px rgb(255, 255, 255);
-  background: #f2f2f2;
-  border-radius: 5px;
-  padding-bottom: 3px;
-  margin-bottom: 1cm;
-  cursor: pointer;
-  padding-left: 1px;
+.pod_slide .pod_slide_image{
+width: 100%;
+border-radius: 50%;
+border: 5px solid #f2f2f2;
 }
-/* for trend slider */
-.trend_card_slider p{
-  color: black;
-  /* padding: 1rem; */
-  text-align: center;
-}
-.pod_panels{
+.pod_panels {
   color: black;
   padding: 1rem;
   text-align: center;
-}
-/* =----------------------------------------= */
-.pod_panels{
   justify-content: center;
   width: 100%;
   height: 4cm;
-  box-shadow: 0 3px 6px 3px rgb(255, 255, 255);
+  box-shadow: 0 3px 6px 3px rgb(207, 205, 205);
   background: #f2f2f2;
-  border-radius: 5px;
+  border-radius: 10px;
   padding-bottom: 3px;
   margin-bottom: 1cm;
-  cursor: pointer;}
-  
+  cursor: pointer;
+}
+
+/* action button */
+
+.action_tab_container {
+  position: absolute;
+  bottom: 0;
+  margin: 20px;
+  width: auto;
+}
+
+.action_tab {
+  display: flex;
+  border-radius: 10px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.5); /* Adjust the alpha value (0.5 in this example) to control transparency */
+  border: 1px solid #ccc;
+
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.action_tab_container .action_tab .action_button {
+  padding-right: 20px ;
+  padding-left: 20px ;
+   color: #ffffff;
+  font-size: 18px;
+   transition: transform 0.5s ease-in-out; /* Add a smooth transition effect */
+}
+.action_tab_container .action_tab .action_button :hover{
+  color: #833ab4;
+   transform: scale(1.0); /* Increase the size on hover */
+}
+
+/* artist card */
+.artist_card{
+  border-radius: 10px;
+  padding: 1px;
+  margin:1px;
+  font-family: 'Karla', sans-serif;
+  font-family: 'Signika', sans-serif;
+  color: black;
+  font-weight: bold;
+  font-weight: 400;
+}
+.artist_card .artist_qoute {
+color:#f2f2f2;
+font-size:24px;
+}
+.artist_card .artist_name{
+color:#fff;
+font-size:22px;
+}
+.artist_card .podcast_title{
+  color:#f3f3f3;
+   font-size: 16px;
+   margin:2px;
+}

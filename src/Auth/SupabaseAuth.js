@@ -1,4 +1,3 @@
-// import { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 //Database Keys
 const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
@@ -17,6 +16,37 @@ export async function checkUserAuth() {
     return null;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const isAuthenticated = () => {
+  const user = supabase.auth.user();
+  return user !== null;
+};
+
+
+
+
+
 
 
 

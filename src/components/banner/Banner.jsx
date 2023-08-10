@@ -2,7 +2,8 @@ import React from 'react';
 import './Banner.css';
 import { Container, Row, Col, Carousel, Button } from 'react-bootstrap';
 // -----------------------------------------------
-import banner_03 from '../../assets/banner_03.png';
+// import banner_03 from '../../assets/banner_03.png';
+import global from '../../assets/global.png';
 import banner_04 from '../../assets/banner_04.png';
 import banner_05 from '../../assets/banner_05.png';
 import Product from '../banner/product/Product';
@@ -47,7 +48,7 @@ const Banner = () => {
               <Carousel.Item interval={7000}>
                 <img
                   className="d-block w-100"
-                  src={banner_03}
+                  src={global}
                   alt="Third slide"
                 />
                 <Carousel.Caption></Carousel.Caption>

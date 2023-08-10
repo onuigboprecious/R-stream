@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@headlessui/react": "^1.7.15",
     "@supabase/auth-ui-react": "^0.4.2",
     "@supabase/supabase-js": "^2.26.0",
     "@testing-library/jest-dom": "^5.16.5",
@@ -20,10 +19,8 @@
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.4.4",
     "react-scripts": "5.0.1",
-    "react-validation": "^3.0.7",
     "redux": "^4.2.1",
     "swiper": "^8.4.5",
-    "validator": "^13.7.0",
     "video-react": "^0.16.0",
     "web-vitals": "^2.1.4"
   },

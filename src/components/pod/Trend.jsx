@@ -1,46 +1,50 @@
-import layout from '../../assets/layout.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Card from 'react-bootstrap/Card';
-// Import Swiper styles
 import 'swiper/css';
+import Action from './action_tab';
+import { Row, Col, Container, Image } from 'react-bootstrap';
+import oblack from '../../assets/oblack.jpeg';
+import { FcApproval } from 'react-icons/fc';
+import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im';
 
 function Trend() {
   return (
-    <div className="trend_card_slider">
-      <p>
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={1}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
-        >
-            {/* only one swiperslider card will be in use,   */}
-          <SwiperSlide>
-            <Card className="ii">
-              <Card.Img src={layout} height={250} alt="Card image" />
-              <Card.ImgOverlay>
-                <Card.Title>CARD ONE</Card.Title>
-              </Card.ImgOverlay>
-            </Card>
-          </SwiperSlide>
-          {/* end of valid swiperslider card  */}
+    <div className="trend_card_slider auto py-4">
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={1}
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        <SwiperSlide className="pod_slide">
+          <Container>
+            <Row xm={12} sm={12} lg={12}>
+              <Col xm={4} sm={4} md={4} lg={4}>
+                <Image src={oblack} className="pod_slide_image" />
+              </Col>
+              <Col xm={8} sm={8} md={8} lg={8}>
+                <section className="artist_card">
+                  <div className="artist_qoute">
+                    {' '}
+                    <ImQuotesLeft />
+                  </div>
+                  <div className="artist_name">
+                    OdumuduBlvck {} <FcApproval />
+                  </div>
+                  <div className="podcast_title">
+                    Declan RIce <ImQuotesRight />
+                  </div>
+                </section>
+              </Col>
+            </Row>
+          </Container>
+          <Action />
+        </SwiperSlide>
 
-          <SwiperSlide>
-          <Card className="ii">
-              <Card.Img src={layout} height={250} alt="Card image" />
-              <Card.ImgOverlay>
-                <Card.Title>CARD TWO</Card.Title>
-              </Card.ImgOverlay>
-            </Card>
-          </SwiperSlide>
-          
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          <SwiperSlide>Slide 5</SwiperSlide>
-          <SwiperSlide>Slide 6</SwiperSlide>
-          <SwiperSlide>Slide 7</SwiperSlide>
-        </Swiper>
-      </p>
+        <SwiperSlide className="pod_slide">Slide 4</SwiperSlide>
+        <SwiperSlide className="pod_slide">Slide 5</SwiperSlide>
+        <SwiperSlide className="pod_slide">Slide 6</SwiperSlide>
+        <SwiperSlide className="pod_slide">Slide 7</SwiperSlide>
+      </Swiper>
     </div>
   );
 }

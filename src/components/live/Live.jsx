@@ -7,15 +7,10 @@ import { FaCloudDownloadAlt } from 'react-icons/fa';
 import { BsFillBookmarkCheckFill } from 'react-icons/bs';
 import { FiExternalLink } from 'react-icons/fi';
 import React from 'react';
-// import { useState } from 'react';
-
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-cards';
-// import { Thumbs } from 'swiper';
+
 
 function Live() {
   return (

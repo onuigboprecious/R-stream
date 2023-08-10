@@ -9,7 +9,7 @@ const SignupButton = () => {
       variant="outline-Light"
       className="btn_sign_up m-2"
       as={Link}
-      to="/sign-up"
+      to="/sign"
     >
       Sign up
     </Button>

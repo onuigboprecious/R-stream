@@ -56,3 +56,11 @@ window.onload = function() {
     document.body.appendChild(css);
 };
 // --------------------------------------------------------------------------------
+
+
+// var button = document.getElementById('left_view');
+// var toggleButton = document.getElementById('menu-toggle');
+
+// toggleButton.onclick = function () {
+//   button.classList.toggle('toggled');
+// };
