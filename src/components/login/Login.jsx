@@ -14,7 +14,6 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { BsFillEnvelopeFill, BsFillKeyFill } from 'react-icons/bs';
 import login_01 from '../../assets/login_01.png';
-//for OTP and Forget page
 import './Login.css';
 import '../forgot/Forget';
 
@@ -32,14 +31,12 @@ function Login() {
       console.log('User signed in:', user);
       setIsLoading(false);
       navigate('/live');
-       window.location.reload(false);
+      window.location.reload(false);
     } catch (error) {
       setError(error.message);
       setIsLoading(false);
     }
   };
-
-
 
   return (
     <div className="Login_section">
@@ -47,7 +44,7 @@ function Login() {
         <Row xm={12} sm={12} md={12} lg={12}>
           <Col xm={12} sm={12} md={6}>
             <img
-              className="d-block justify-content-center w-100 "
+              className="d-block justify-content-center w-100 login_img"
               src={login_01}
               alt="login__photo"
             />
@@ -98,20 +95,18 @@ function Login() {
                 type="submit"
                 onClick={handleSignIn}
               >
-                <span>{isLoading ? 'Loading...' : 'Login'}</span>
+                <span>{isLoading ? 'logining In...' : 'Login'}</span>
               </Button>
-
-              {/* {error && <div>{error}</div>} */}
-
-              <Alert variant="danger">
-                {error && <div>{error}</div>}
-              </Alert>
 
               <div className="reset_password">
                 Forgot Password?
                 <NavLink className="reset_password_link" as={Link} to="/Forgot">
                   Reset!
                 </NavLink>
+              </div>
+
+              <div data-aos="fade-up">
+                {error && <Alert variant="danger">{error}</Alert>}
               </div>
             </Form>
           </Col>

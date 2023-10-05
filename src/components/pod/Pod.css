@@ -5,20 +5,36 @@
 }
 
 .trend_card_slider .pod_slide {
-  background-color: #9422f1;
+  background-color: #833ab4;
 }
-.pod_slide .pod_slide_image{
+.trend_Hot{
+font-size: 24px;
+color: #833ab4;
+width: auto;
+
+
+
+
+}
+ .pod_slide_image{
 width: 100%;
-border-radius: 50%;
-border: 5px solid #f2f2f2;
+height:auto; 
+border-radius: 40%;
+border: 2px solid #f2f2f2;
+margin: auto;
+align-content: center
 }
+.pod_slide_action{
+padding: 1px 1px;
+}
+
 .pod_panels {
   color: black;
   padding: 1rem;
   text-align: center;
   justify-content: center;
   width: 100%;
-  height: 4cm;
+  height: 5cm;
   box-shadow: 0 3px 6px 3px rgb(207, 205, 205);
   background: #f2f2f2;
   border-radius: 10px;
@@ -28,21 +44,19 @@ border: 5px solid #f2f2f2;
 }
 
 /* action button */
-
 .action_tab_container {
   position: absolute;
-  bottom: 0;
-  margin: 20px;
+  bottom: 5px;
+  margin-top: 10px;
   width: auto;
 }
 
 .action_tab {
   display: flex;
   border-radius: 10px;
-  padding: 25px;
+  padding: 20px;
   background: rgba(255, 255, 255, 0.5); /* Adjust the alpha value (0.5 in this example) to control transparency */
   border: 1px solid #ccc;
-
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -71,14 +85,55 @@ border: 5px solid #f2f2f2;
 }
 .artist_card .artist_qoute {
 color:#f2f2f2;
-font-size:24px;
+font-size:36px;
 }
 .artist_card .artist_name{
 color:#fff;
-font-size:22px;
+font-size:32px;
 }
 .artist_card .podcast_title{
   color:#f3f3f3;
-   font-size: 16px;
+   font-size: 22px;
    margin:2px;
+}
+.artist_card .podcast_time{
+ color: #ffffff;
+ font-size: 13px;
+
+}
+
+
+
+@media (min-width: 320px) and (max-width: 760px) {
+  .pod_slide_image:first-child {
+    width: 6cm;
+    height: 6cm;
+    padding: auto;
+  }
+ 
+
+
+.artist_card{
+  border-radius: 10px;
+  padding: 10px;
+  margin:10px;
+}
+
+.artist_card .artist_name{
+color:#fff;
+font-size:18px;
+}
+
+.artist_card .podcast_time{
+ color: #ffffff;
+ font-size: 14px;
+}
+.trend_card_slider .pod_slide {
+  background-color: #833ab4;
+  height: auto;
+}
+.action_tab {
+  margin: 10px;
+  padding: 10px;
+}
 }

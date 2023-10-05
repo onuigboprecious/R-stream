@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import ProtectedRoute from './Routes/protectedRoute';
 //----------React Bootstarp Dependencies----------------
 import 'react-bootstrap';
-// import 'bootstrap';
+import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //-----------Application Components----------------------

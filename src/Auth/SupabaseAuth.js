@@ -16,39 +16,22 @@ export async function checkUserAuth() {
     return null;
   }
 }
+// for password rest 
+export async function resetPassword(email,) {
+  try {
+    await supabase.auth.resetPasswordForEmail(email,);
+    console.log('Password reset email sent successfully!');
+  } catch (error) {
+    console.error('Error resetting password:', error.message);
+  }
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// for user authenticated
 export const isAuthenticated = () => {
   const user = supabase.auth.user();
   return user !== null;
 };
-
-
-
-
-
-
-
 
 //Sign Up Api
 export async function signUp(email, password) {

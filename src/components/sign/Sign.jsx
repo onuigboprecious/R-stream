@@ -11,13 +11,13 @@ import {
   Button,
   NavLink,
   InputGroup,
+  Alert,
 } from 'react-bootstrap';
 import { BsFillEnvelopeFill, BsFillKeyFill } from 'react-icons/bs';
 import '../sign/Sign.css';
 import { Link } from 'react-router-dom';
-import sign_01 from '../../assets/sign_01.png';
-import sign_02 from '../../assets/sign_02.png';
-import sign_03 from '../../assets/sign_03.png';
+import login_02 from '../../assets/login_02.png';
+
 
 function Sign() {
   const [email, setEmail] = useState('');
@@ -53,24 +53,8 @@ function Sign() {
             <Carousel fade>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
-                  src={sign_01}
-                  alt="login__photo"
-                />
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src={sign_02}
-                  alt="login__photo"
-                />
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src={sign_03}
+                  className=" d-block justify-content-center w-100 login_img"
+                  src={login_02}
                   alt="login__photo"
                 />
               </Carousel.Item>
@@ -148,7 +132,9 @@ function Sign() {
                   {isLoading ? 'Signing Up...' : 'Sign Up'}
                 </Button>
               )}
-              {error && <div variant="danger">{error}</div>}
+              <div data-aos="fade-up">
+                {error && <Alert variant="danger">{error}</Alert>}
+              </div>
             </Form>
           </Col>
         </Row>
