@@ -38,11 +38,6 @@ export default function App() {
       duration: 1000,
     });
   }, []);
-
-
-
-
-
   return (
     <div className="App">
       <Router>

@@ -11,6 +11,7 @@ import {
 import forget from '../../assets/forget.png';
 import { BsFillEnvelopeFill } from 'react-icons/bs';
 import { supabase } from '../../Auth/SupabaseAuth';
+// import {reset-password} from './NewPassword';
 
 function Forget() {
   const [email, setEmail] = useState('');
@@ -20,7 +21,7 @@ function Forget() {
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
         redirectTo:
-          'https://refinipee.vercel.app/api/auth/callback?next=/account/update-password',
+          'https://refinipee.vercel.app/api/auth/callback?next=/reset-password',
       });
       if (error) {
         setMessage(`Error: ${error.message}`);
