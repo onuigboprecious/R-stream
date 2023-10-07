@@ -21,7 +21,7 @@ function Forget() {
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
         redirectTo:
-          'https://refinipee.vercel.app/api/auth/callback?next=/reset-password',
+          'https://refinipee.vercel.app/api/auth/callback?next=/forgot/reset-password',
       });
       if (error) {
         setMessage(`Error: ${error.message}`);
