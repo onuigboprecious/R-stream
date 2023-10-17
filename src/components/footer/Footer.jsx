@@ -45,7 +45,7 @@ function Footer() {
           <Col xm={12} sm={12} md={4}>
             <Nav className="quick_links justify-content-center">
               <Nav.Item>
-                <NavLink as={Link} to="/about" className="quick_links">
+                <NavLink as={Link} to="/about-us" className="quick_links">
                   About
                 </NavLink>
               </Nav.Item>

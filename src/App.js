@@ -23,7 +23,7 @@ import AlertEmail from './components/messages/Alert-email';
 import './App.css';
 import ChangePassword from './components/forgot/ChangePassword';
 import Support from './components/pages/Support';
-import About from './components/pages/AboutUs';
+import AboutUs from './components/pages/AboutUs';
 import Faq  from './components/pages/Faq';
 import Price from './components/pages/Price';
 import LoginButton from './components/buttons/loginButton';
@@ -58,7 +58,7 @@ export default function App() {
           <Route path="/Alert" element={<AlertEmail />} />
           <Route path="/reset-password" element={<NewPassword />} />
           <Route path="/update-password" element={<ChangePassword />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route path="/support" element={<Support />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/price" element={<Price />} />

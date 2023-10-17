@@ -2,7 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import './page_style.css';
 import Footer from '../footer/Footer.jsx';
 
-const About = () => {
+const AboutUs = () => {
   return (
     <div className="About_page">
       <Container>
@@ -76,4 +76,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutUs;
