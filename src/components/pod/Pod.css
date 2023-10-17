@@ -4,43 +4,111 @@
   color: #833ab4;
 }
 
-.trend_card_slider .pod_slide {
+.space {
+  background-color: #ffffff;
+  /* margin-top: 4px; */
+  margin-bottom: 4px;
+  border-radius: 50px;
+  padding: 5px;
+  display: flex;
+}
+.Search_field {
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  outline: none;
+  border: #833ab4;
+  font-size: 14px;
+}
+.btn_Search {
+  background-color: #f2f2f2;
+  color: #833ab4;
+  font-size: 16px;
+  font-weight: 300;
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+  border: #833ab4;
+  margin-right: 10px;
+}
+.btn_Search:hover {
+  color: #ffffff;
   background-color: #833ab4;
 }
-.trend_Hot{
-font-size: 24px;
-color: #833ab4;
-width: auto;
 
-
-
-
+.trend_card_slider .pod_slide {
+  background-color: #f2f2f2;
+  color: #833ab4;
 }
- .pod_slide_image{
-width: 100%;
-height:auto; 
-border-radius: 40%;
-border: 2px solid #f2f2f2;
-margin: auto;
-align-content: center
+.trend_Hot {
+  font-size: 18px;
+  color: #833ab4;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  border-radius: 10px;
 }
-.pod_slide_action{
-padding: 1px 1px;
+.Trend_bar {
+  justify-content: flex-start;
+  display: inline-flex;
+  font-size: 14px;
+}
+.Search_bar {
+  justify-content: flex-end;
+}
+
+.btn_search {
+  color: #833ab4;
+}
+
+.pod_slide_action {
+  padding: 1px 1px;
 }
 
 .pod_panels {
-  color: black;
-  padding: 1rem;
+  color: #833ab4;
   text-align: center;
   justify-content: center;
   width: 100%;
-  height: 5cm;
-  box-shadow: 0 3px 6px 3px rgb(207, 205, 205);
+  height: auto;
   background: #f2f2f2;
   border-radius: 10px;
   padding-bottom: 3px;
   margin-bottom: 1cm;
   cursor: pointer;
+  transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+.pod_panels:hover {
+  transform: scale(+1.1); /* Increase the size on hover */
+}
+
+.pod_panels .file_image {
+  width: auto;
+  height: 5cm;
+  border-radius: 10px;
+  padding: 1px;
+}
+.artist_container {
+  margin-top: 40%;
+  margin-bottom: 10%;
+  justify-content: flex-end;
+}
+.artist_name {
+  color: #000;
+  margin: 6px;
+  justify-items: center;
+}
+.data_title {
+  margin: 6px;
+  font-size: 10px;
+  justify-content: start;
+}
+.file_play {
+  border-color: #833ab4;
+}
+.file_play:hover {
+  border-color: #833ab4;
 }
 
 /* action button */
@@ -49,91 +117,89 @@ padding: 1px 1px;
   bottom: 5px;
   margin-top: 10px;
   width: auto;
+  margin-bottom: 5px;
 }
 
 .action_tab {
   display: flex;
   border-radius: 10px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.5); /* Adjust the alpha value (0.5 in this example) to control transparency */
+  background: rgba(131, 58, 180, 1);
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 320px;
 }
 .action_tab_container .action_tab .action_button {
-  padding-right: 20px ;
-  padding-left: 20px ;
-   color: #ffffff;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: #c0bebe;
   font-size: 18px;
-   transition: transform 0.5s ease-in-out; /* Add a smooth transition effect */
+  transition: transform 0.5s ease-in-out; /* Add a smooth transition effect */
 }
-.action_tab_container .action_tab .action_button :hover{
-  color: #833ab4;
-   transform: scale(1.0); /* Increase the size on hover */
+.action_tab_container .action_tab .action_button :hover {
+  color: #ffffff;
+  transform: scale(1); /* Increase the size on hover */
 }
-
-/* artist card */
-.artist_card{
-  border-radius: 10px;
-  padding: 1px;
-  margin:1px;
-  font-family: 'Karla', sans-serif;
-  font-family: 'Signika', sans-serif;
-  color: black;
-  font-weight: bold;
-  font-weight: 400;
-}
-.artist_card .artist_qoute {
-color:#f2f2f2;
-font-size:36px;
-}
-.artist_card .artist_name{
-color:#fff;
-font-size:32px;
-}
-.artist_card .podcast_title{
-  color:#f3f3f3;
-   font-size: 22px;
-   margin:2px;
-}
-.artist_card .podcast_time{
- color: #ffffff;
- font-size: 13px;
-
-}
-
-
 
 @media (min-width: 320px) and (max-width: 760px) {
+  .trend_Hot {
+    font-size: 8px;
+    border-radius: 10px;
+  }
+  .Trend_bar {
+    font-size: 10px;
+  }
+
+  .Search_field {
+    font-size: 10px;
+  }
+  /* ----------------------- */
+
   .pod_slide_image:first-child {
     width: 6cm;
-    height: 6cm;
+    height: auto;
     padding: auto;
   }
- 
-
-
-.artist_card{
-  border-radius: 10px;
-  padding: 10px;
-  margin:10px;
+  .pod_slide {
+    height:max-content;
+    position:absolute;
+  }
+  
+.action_tab_container {
+display: absolute;
+  bottom: 5px;
+  margin-top: 10px;
+  width: auto;
+  margin-bottom: 5px;
 }
 
-.artist_card .artist_name{
-color:#fff;
-font-size:18px;
-}
-
-.artist_card .podcast_time{
- color: #ffffff;
- font-size: 14px;
-}
-.trend_card_slider .pod_slide {
-  background-color: #833ab4;
+.pod_panels {
+  width: 100%;
   height: auto;
+  padding: 1px;
+  cursor: pointer;
+  transition: none;
 }
-.action_tab {
-  margin: 10px;
-  padding: 10px;
+.pod_panels:hover {
+  transform: none;
+}
+.artist_container {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.pod_panels .file_image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  padding: 1px;
+}
+  
+.action_tab_container {
+position: relative;
+  bottom: 5px;
+  margin-top: 10px;
+  width: auto;
+  margin-bottom: 10px;
 }
 }

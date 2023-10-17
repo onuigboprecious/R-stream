@@ -1,10 +1,10 @@
 import React from 'react';
 import './Footer.css';
 import logo from '../../assets/logo.jpg';
-import '../pages/about';
-import '../pages/fqa';
-import '../pages/price';
-import '../pages/support'
+import '../pages/About';
+import '../pages/Faq';
+import '../pages/Price';
+import '../pages/Support';
 import { Link } from 'react-router-dom';
 import { Nav, Col, Row, Container, Navbar, NavLink } from 'react-bootstrap';
 import {
@@ -45,32 +45,37 @@ function Footer() {
           </Col>
           <Col xm={12} sm={12} md={4}>
             <Nav className="quick_links justify-content-center">
-              <Nav.Item> 
-                <NavLink as={Link} to="./About" className='quick_links'>
+              <Nav.Item>
+                <NavLink as={Link} to="./About" className="quick_links">
                   About
                 </NavLink>
-              </Nav.Item >
-              <Nav.Item >
-                <NavLink as={Link} to="./price" className='quick_links'>
+              </Nav.Item>
+              <Nav.Item>
+                <NavLink as={Link} to="./price" className="quick_links">
                   Pricing
                 </NavLink>
               </Nav.Item>
-              <Nav.Item >
-                <NavLink as={Link} to="/fqa" className='quick_links'> 
+              <Nav.Item>
+                <NavLink as={Link} to="/fqa" className="quick_links">
                   FAQs
                 </NavLink>
               </Nav.Item>
-              <Nav.Item >
-                <NavLink as={Link} to="./support" className='quick_links'>
+              <Nav.Item>
+                <NavLink as={Link} to="./support" className="quick_links">
                   Support
                 </NavLink>
-              </Nav.Item >
+              </Nav.Item>
             </Nav>
           </Col>
           <Col xm={12} sm={12} md={4}>
             <Nav className="justify-content-center">
               <Navbar.Brand>
-                <img src={logo} alt="brand logo" height={45} className='brand_logo'/>
+                <img
+                  src={logo}
+                  alt="brand logo"
+                  height={45}
+                  className="brand_logo"
+                />
               </Navbar.Brand>
             </Nav>
           </Col>

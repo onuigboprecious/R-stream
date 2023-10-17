@@ -54,18 +54,22 @@
 
 .swiper {
   width: auto;
-  height: 11cm;
+  height: 14cm;
+
 }
 
 .swiper-slide {
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
-  border-radius: 18px;
+  border-radius: 10px;
   font-weight: bold;
   color: #fff;
 }
+@media (min-width: 320px) and (max-width: 760px) {
 
-/* .swiper-slide {
-  background-color: #833ab4;
-} */
+  .swiper{
+    width:auto;
+  }
+}
+
