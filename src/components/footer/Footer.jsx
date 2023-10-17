@@ -1,7 +1,6 @@
 import React from 'react';
 import './Footer.css';
 import logo from '../../assets/logo.jpg';
-import '../pages/About';
 import '../pages/Faq';
 import '../pages/Price';
 import '../pages/Support';
@@ -46,22 +45,22 @@ function Footer() {
           <Col xm={12} sm={12} md={4}>
             <Nav className="quick_links justify-content-center">
               <Nav.Item>
-                <NavLink as={Link} to="./About" className="quick_links">
+                <NavLink as={Link} to="/about" className="quick_links">
                   About
                 </NavLink>
               </Nav.Item>
               <Nav.Item>
-                <NavLink as={Link} to="./price" className="quick_links">
+                <NavLink as={Link} to="/price" className="quick_links">
                   Pricing
                 </NavLink>
               </Nav.Item>
               <Nav.Item>
-                <NavLink as={Link} to="/fqa" className="quick_links">
+                <NavLink as={Link} to="/faq" className="quick_links">
                   FAQs
                 </NavLink>
               </Nav.Item>
               <Nav.Item>
-                <NavLink as={Link} to="./support" className="quick_links">
+                <NavLink as={Link} to="/support" className="quick_links">
                   Support
                 </NavLink>
               </Nav.Item>

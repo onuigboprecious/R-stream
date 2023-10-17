@@ -1,4 +1,4 @@
-import { Container, Row, Col, } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import './page_style.css';
 import Footer from '../footer/Footer.jsx';
 
