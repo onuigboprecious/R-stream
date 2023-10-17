@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1f30bebe.css",
+    "main.js": "/static/js/main.e0039d0f.js",
+    "static/media/Connected.gif": "/static/media/Connected.ed20994c295769126e77.gif",
+    "static/media/soundtest.mp3": "/static/media/soundtest.9ac13529f0e8a923f524.mp3",
+    "static/media/Couple.png": "/static/media/Couple.4ae1658d5b762e17270f.png",
+    "static/media/thought.png": "/static/media/thought.79b2b08fb24981712392.png",
+    "static/media/login_02.png": "/static/media/login_02.93b2c36680cd6d5771f6.png",
+    "static/media/banner_04.png": "/static/media/banner_04.2369ab07430a95b1de09.png",
+    "static/media/banner_05.png": "/static/media/banner_05.80e8229d60738aac89df.png",
+    "static/media/forget.png": "/static/media/forget.e11132888c5c3d7df43c.png",
+    "static/media/login_01.png": "/static/media/login_01.6f90a9678903bc83ee30.png",
+    "static/media/banner_03.png": "/static/media/banner_03.f1f90e1b92c08868b5be.png",
+    "static/media/product_02.png": "/static/media/product_02.cf833aac1110e5ca4a96.png",
+    "static/media/logo.jpg": "/static/media/logo.ce00cda00b5d56ee595c.jpg",
+    "static/media/oblack.jpeg": "/static/media/oblack.afc4f5a0f1e7ba3d2738.jpeg",
+    "static/media/home.png": "/static/media/home.3543a3e3f8c884a6fd0a.png",
+    "static/media/footer.png": "/static/media/footer.aea31388c667451d9229.png",
+    "index.html": "/index.html",
+    "main.1f30bebe.css.map": "/static/css/main.1f30bebe.css.map",
+    "main.e0039d0f.js.map": "/static/js/main.e0039d0f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1f30bebe.css",
+    "static/js/main.e0039d0f.js"
+  ]
+}
