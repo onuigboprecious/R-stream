@@ -1,9 +1,9 @@
-const Price = () => {
-    return ( 
-        <div className="Price_page">
-            <h1>Pricing Page</h1>
-        </div>
-     );
+import React from 'react'
+
+function Price() {
+  return (
+    <div>Price</div>
+  )
 }
- 
-export default Price;
+
+export default Price

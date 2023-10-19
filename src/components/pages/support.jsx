@@ -1,9 +1,9 @@
+import React from 'react'
+
 const Support = () => {
-    return (  
-       <div className="Support_page">
-<h1>Support Page</h1>
-       </div>
-    );
+  return (
+    <div>Support</div>
+  )
 }
- 
-export default Support;
+
+export default Support
