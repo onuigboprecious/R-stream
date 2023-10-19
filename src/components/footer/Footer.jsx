@@ -4,6 +4,7 @@ import logo from '../../assets/logo.jpg';
 import '../pages/Faq';
 import '../pages/Price';
 import '../pages/Support';
+import '../pages/AboutUs';
 import { Link } from 'react-router-dom';
 import { Nav, Col, Row, Container, Navbar, NavLink } from 'react-bootstrap';
 import {
