@@ -1,45 +1,36 @@
 import React from 'react';
-import { Container, NavLink, Navbar, Nav, Button, } from 'react-bootstrap';
+import { Container, NavLink, Navbar, Nav} from 'react-bootstrap';
 import { FcApproval } from 'react-icons/fc';
 import logo from '../../assets/logo.jpg';
 import { Link } from 'react-router-dom';
 import LoginButton from '../buttons/loginButton';
 import SignupButton from '../buttons/signupButton';
-import { supabase } from '../../Auth/SupabaseAuth';
+// import {  supabase } from '../../Auth/SupabaseAuth';
 import '../live/Live';
 import '../cat/Cat';
 import '../pod/Pod';
 import './Navbar.css';
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import { } from '../../Auth/SupabaseAuth';
+import { useAuth, } from '../../Context/Authprovider'
+import SignoutButton from '../buttons/signoutButton';
 
 const NavHead = () => {
-  const navigate = useNavigate();
-  const [user, setUser] = useState(false);
 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const {
-          data: { user },
-        } = await supabase.auth.getUser();
-        console.log('User signed in:', user); // Debug
-        setUser(user);
-      } catch (error) {
-        console.error('Error fetching user:', error);
-        setUser(null);
-      }
-    };
-    fetchUserData();
-  }, []);
 
-  const handleSignout = async () => {
-    await supabase.auth.signOut();
-    setUser(null); // Clear the user state
-    localStorage.clear(); // To clear Local Storage
-    sessionStorage.clear(); // To clear Session Storage
-    navigate('/');
-  };
+
+  const { auth, user  } = useAuth();
+
+  // const handleLogout = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const { error } = await signOut();
+  //     console.log(error);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <div className="nav_section ">
@@ -55,7 +46,6 @@ const NavHead = () => {
               style={{ maxHeight: 'auto' }}
               navbarScroll
             >
-
               <NavLink as={Link} to="/" className="link">
                 Home
               </NavLink>
@@ -71,26 +61,17 @@ const NavHead = () => {
               </NavLink>
             </Nav>
             <Nav className="d-flex action">
-              {user ? (
+              {!auth && <LoginButton />}
+              {!auth && <SignupButton />}
+            </Nav>
+            <Nav>
+              {auth && (
                 <div className="signout_panel">
-                  <text>
+                  <div className="text">
                     Hello!, {user.email} <FcApproval />
-                  </text>
-                  <Button
-                    onClick={handleSignout}
-                    variant="outline-light"
-                    className="btn_sign_up m-2"
-                    as={Link}
-                    to="/"
-                  >
-                    Logout
-                  </Button>
+                  </div>
+                  <SignoutButton />
                 </div>
-              ) : (
-                <>
-                  {' '}
-                  <LoginButton /> <SignupButton />
-                </>
               )}
             </Nav>
           </Navbar.Collapse>

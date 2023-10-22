@@ -1,21 +1,15 @@
-// ProtectedRoute.js
+import { useAuth } from './../Context/Authprovider'
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
-// import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { supabase } from '../Auth/SupabaseAuth';
+const AuthRoute = () => {
+  const { user } = useAuth();
+  const location = useLocation();
 
-const ProtectedRoute = ({ children }) => {
-  const navigate = useNavigate();
-  const isAuthenticated = () => {
-    const user = supabase.auth.user();
-    return user !== null;
-  };
-
-  if (!isAuthenticated) {
-    return navigate('/Login');
-  }
-
-  return children;
+  return user ? (
+    <Outlet />
+  ) : (
+    <Navigate to={'/login'} replace state={{ path: location.pathname }} />
+  );
 };
 
-export default ProtectedRoute;
+export default AuthRoute;

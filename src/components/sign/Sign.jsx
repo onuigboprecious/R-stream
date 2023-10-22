@@ -1,6 +1,5 @@
-import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
-import { signUp } from '../../Auth/SupabaseAuth';
+import React, { useState, useRef } from 'react';
+import { supabase } from '../../Auth/SupabaseAuth';
 import Loader from '../messages/load';
 import {
   Container,
@@ -15,36 +14,50 @@ import {
 } from 'react-bootstrap';
 import { BsFillEnvelopeFill, BsFillKeyFill } from 'react-icons/bs';
 import '../sign/Sign.css';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import login_02 from '../../assets/login_02.png';
 
-
 function Sign() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
-  const handleSignUp = async (e) => {
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+  const confirmPasswordRef = useRef(null);
+  const [errorMsg, setErrorMsg] = useState('');
+  const [msg, setMsg] = useState('');
+  const [loading, setLoading] = useState(false);
+  const register = (email, password) =>
+    supabase.auth.signUp({ email, password });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      setIsLoading(true); // Show the loader when the form is submitted
-
-      const user = await signUp(email, password);
-      console.log('User signed up:', user);
-      // Simulate a delay of 5 seconds before hiding the loader
-        setTimeout(() => {
-        setIsLoading(false); // Hide the loader after the delay
-        navigate('/verification'); // redirect to verification page on success
-        // You can add further logic here, such as redirecting to another page or displaying a success message.
-      }, 5000);
-    } catch (error) {
-      setError(error.message);
-      setIsLoading(false); // Hide the loader if an error occurs
+    if (
+      !passwordRef.current?.value ||
+      !emailRef.current?.value ||
+      !confirmPasswordRef.current?.value
+    ) {
+      setErrorMsg('Please fill all the fields');
+      return;
     }
+    if (passwordRef.current.value !== confirmPasswordRef.current.value) {
+      setErrorMsg("Passwords doesn't match");
+      return;
+    }
+    try {
+      setErrorMsg('');
+      setLoading(true);
+      const { data, error } = await register(
+        emailRef.current.value,
+        passwordRef.current.value
+      );
+      if (!error && data) {
+        setMsg(
+          'Registration Successful. Check your email to confirm your account'
+        ) 
+      }
+    } catch (error) {
+      setErrorMsg('Error in Creating Account');
+    }
+    setLoading(false);
   };
-
   return (
     <div className="Sign_section">
       <Container>
@@ -63,7 +76,7 @@ function Sign() {
 
           {/* -------------------------end of carousel----------------------- */}
           <Col className=" layout_panel_sign xm={12} sm={12} md={6} px-0">
-            <Form className="form_panel_sign" onSubmit={handleSignUp}>
+            <Form className="form_panel_sign" onSubmit={handleSubmit}>
               <div className="intro_sign">We're Happy you're Joining!</div>
               <div className="intro_text_sign">It's quick and easy...</div>
               <div className="Sign">
@@ -78,12 +91,11 @@ function Sign() {
                   <BsFillEnvelopeFill />{' '}
                 </InputGroup.Text>
                 <Form.Control
-                  placeholder="Email"
+                  placeholder="Refinipee@email.com"
                   input
                   type="email"
                   id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  ref={emailRef}
                   required
                   autocomplete="on"
                 />
@@ -98,15 +110,29 @@ function Sign() {
                   input
                   type="password"
                   id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  ref={passwordRef}
+                  required
+                  autoComplete="on"
+                />
+              </InputGroup>
+              <InputGroup className="mb-3" controlId="formGroupPassword">
+                <InputGroup.Text id="basic-addon1" className="sign_icons">
+                  {' '}
+                  <BsFillKeyFill />{' '}
+                </InputGroup.Text>
+                <Form.Control
+                  placeholder="Repeat Password"
+                  input
+                  type="password"
+                  id="password"
+                  ref={confirmPasswordRef}
                   required
                   autocomplete="on"
                 />
               </InputGroup>
 
               <div className="terms_cons">
-                <Form.Check aria-label="option 1" />{' '}
+                <Form.Check aria-label="option 1" required />{' '}
                 <div>
                   {' '}
                   I have read And agreed to the
@@ -116,24 +142,43 @@ function Sign() {
                 </div>
               </div>
 
-              {isLoading ? (
+              {loading ? (
                 // Show the loader when isLoading is true
                 <div>
                   <Loader />
                 </div>
-              ) : (
+                 ) : (
                 // Show the "Sign Up" button when isLoading is false
                 <Button
                   variant="light"
                   className="btn_Sign_page"
                   type="submit"
-                  onClick={handleSignUp}
+                  disabled={loading}
                 >
-                  {isLoading ? 'Signing Up...' : 'Sign Up'}
+                  {loading ? 'Signing Up...' : 'Sign Up'}
                 </Button>
               )}
-              <div data-aos="fade-up">
-                {error && <Alert variant="danger">{error}</Alert>}
+              <div data-aos="fade-in">
+                {errorMsg && (
+                  <Alert
+                    variant="transperent"
+                    onClose={() => setErrorMsg('')}
+                    dismissible
+                    style={{ backgroundColor: '#fff', color: '#ff0303' }}
+                  >
+                    {errorMsg}
+                  </Alert>
+                )}
+                {msg && (
+                  <Alert
+                    variant="treanspernt"
+                    onClose={() => setMsg('')}
+                    dismissible
+                    style={{ backgroundColor: '#fff', color: '#10d738' }}
+                  >
+                    {msg}
+                  </Alert>
+                )}
               </div>
             </Form>
           </Col>

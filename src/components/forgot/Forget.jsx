@@ -10,27 +10,28 @@ import {
 } from 'react-bootstrap';
 import forget from '../../assets/forget.png';
 import { BsFillEnvelopeFill } from 'react-icons/bs';
-import { supabase } from '../../Auth/SupabaseAuth';
-import './NewPassword'
+import { useRef } from 'react';
+import { useAuth } from '../../Context/Authprovider';
+import './NewPassword';
 
 function Forget() {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const { passwordReset } = useAuth();
+  const emailRef = useRef(null);
+  const [loading, setLoading] = useState(false);
+  const [msg, setMsg] = useState('');
 
-  const handleReset = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo:
-          'https://refinipee.vercel.app/api/auth/callback?next=/reset-password ',
-      });
-      if (error) {
-        setMessage(`Error: ${error.message}`);
-      } else {
-        setMessage('Password reset email sent successfully!');
-      }
-    } catch (error) {
-      console.error('Error resetting password:', error.message);
+      setLoading(true);
+      const { data, error } = await passwordReset(emailRef.current.value);
+      console.log(error);
+      console.log(data);
+      setMsg('Password reset link has been sent to your email');
+    } catch (e) {
+      console.log(e);
     }
+    setLoading(false);
   };
 
   return (
@@ -41,7 +42,7 @@ function Forget() {
             <img className="d-block w-100" src={forget} alt="product_image" />
           </Col>
           <Col className=" layout_panel xm={12} sm={12} md={6} px-0">
-            <Form className="form_panel" onSubmit={handleReset}>
+            <Form className="form_panel" onSubmit={handleSubmit}>
               <div className="login flex flex-row justify-center text-center">
                 A reset link will be sent to this Email address
               </div>
@@ -53,21 +54,29 @@ function Forget() {
                 <Form.Control
                   placeholder="Example@refinipee.com"
                   type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  ref={emailRef}
+                  required
                 />
               </InputGroup>
 
               <Button
                 variant="light"
+                disabled={loading}
                 className="btn_login_page"
                 type="submit"
-                onClick={handleReset}
               >
                 Send Link
               </Button>
-              <div data-aos="fade-up">
-                {message && <Alert variant="danger">{message}</Alert>}
+              <div data-aos="fade-in">
+                {msg && (
+                  <Alert
+                    variant="success"
+                    onClose={() => setMsg('')}
+                    dismissible
+                  >
+                    {msg}
+                  </Alert>
+                )}
               </div>
             </Form>
           </Col>

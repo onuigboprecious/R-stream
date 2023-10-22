@@ -2,13 +2,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import ProtectedRoute from './Routes/protectedRoute';
+import AuthRoute from './Routes/protectedRoute';
 //----------React Bootstarp Dependencies----------------
 import 'react-bootstrap';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './components/pod/media/Media.css';
-
 //-----------Application Components----------------------
 import Banner from './components/banner/Banner';
 import NavHead from './components/navbar/Navbar';
@@ -42,18 +41,14 @@ export default function App() {
       <Router>
         <NavHead />
         <Routes>
+          <Route element={<AuthRoute />}>
+            <Route path="/cat" element={<Cat />} />
+            <Route path="/live" element={<Live />} />
+            <Route path="/pod" element={<Pod />} />
+          </Route>
+
+          <Route path="*" element={<p>404 page not found!</p>} />
           <Route path="/" element={<Banner />} />
-          {/* <Route path="/live" element={<Live />} /> */}
-          <Route
-            path="/live"
-            element={
-              <ProtectedRoute>
-                <Live />
-              </ProtectedRoute>
-            }
-          />
-          <Route path="/pod" element={<Pod />} />
-          <Route path="/cat" element={<Cat />} />
           <Route path="/Forgot" element={<Forgot />} />
           <Route path="/Alert" element={<AlertEmail />} />
           <Route path="/reset-password" element={<NewPassword />} />
@@ -65,11 +60,9 @@ export default function App() {
           <Route path="/sign-up" element={<SignupButton />} />
           <Route path="/sign-out" element={<SignoutButton />} />
           <Route path="/login-button" element={<LoginButton />} />
-          <Route path="*" element={<p>404 page not found!</p>} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign" element={<Sign />} />
         </Routes>
-        {/* <Footer /> */}
       </Router>
     </div>
   );

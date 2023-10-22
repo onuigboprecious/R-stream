@@ -11,3 +11,13 @@
   font-weight: 900;
   text-align: center;
 }
+
+.update_password_panel {
+  display:flex;
+  margin-top:50px;
+  justify-content:center;
+}
+.update_password_intro{
+  margin: 10px;
+  text-align: center;
+}

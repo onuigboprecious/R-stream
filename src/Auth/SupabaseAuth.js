@@ -27,6 +27,14 @@ export async function resetPassword(email,) {
 }
 
 
+
+
+
+
+
+
+
+
 // for user authenticated
 export const isAuthenticated = () => {
   const user = supabase.auth.user();
@@ -64,7 +72,7 @@ export async function signIn(email, password) {
 
     return user;
   } catch (error) {
-    throw new Error('Failed to sign in');
+    throw new Error('Credentials not valid');
   }
 }
 

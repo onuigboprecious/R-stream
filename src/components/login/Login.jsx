@@ -1,7 +1,9 @@
-import { React, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { signIn } from '../../Auth/SupabaseAuth';
+import { React, useState, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../Context/Authprovider';
+import { supabase } from '../../Auth/SupabaseAuth';
 import Alert from 'react-bootstrap/Alert';
+import Loader from '../messages/load';
 import {
   Container,
   Row,
@@ -11,31 +13,104 @@ import {
   NavLink,
   InputGroup,
 } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
-import { BsFillEnvelopeFill, BsFillKeyFill } from 'react-icons/bs';
+import {
+  BsFillEnvelopeFill,
+  BsFillKeyFill,
+  BsSpotify,
+  BsFacebook,
+} from 'react-icons/bs';
+import { FcGoogle } from 'react-icons/fc';
 import login_01 from '../../assets/login_01.png';
 import './Login.css';
 import '../forgot/Forget';
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+  const [errorMsg, setErrorMsg] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
+  // eslint-disable-next-line no-unused-vars
   const [isLoading, setIsLoading] = useState(false);
-  const handleSignIn = async (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setIsLoading(true);
-      const user = await signIn(email, password);
-      console.log('User signed in:', user);
-      setIsLoading(false);
-      navigate('/live');
-      window.location.reload(false);
+      setErrorMsg('');
+      setLoading(true);
+      if (!passwordRef.current?.value || !emailRef.current?.value) {
+        setErrorMsg('Please fill in the fields');
+        return;
+      }
+      const {
+        data: { user, session },
+        error,
+      } = await login(emailRef.current.value, passwordRef.current.value);
+      if (error) setErrorMsg(error.message);
+      if (user && session) navigate('/');
     } catch (error) {
-      setError(error.message);
-      setIsLoading(false);
+      setErrorMsg('Email or Password Incorrect');
     }
+    setLoading(false);
+  };
+
+  //third party auth services
+  const handleSignInWithFacebook = async () => {
+    setIsLoading(true);
+
+    // eslint-disable-next-line no-unused-vars
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'facebook',
+    });
+
+    if (error) {
+      // Handle error
+      setIsLoading(false);
+      return;
+    }
+
+    // User is successfully logged in
+    setIsLoading(false);
+    // Redirect to your app's homepage or dashboard
+  };
+
+  const handleSignInWithSpotify = async () => {
+    setIsLoading(true);
+
+    // eslint-disable-next-line no-unused-vars
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'spotify',
+    });
+
+    if (error) {
+      // Handle error
+      setIsLoading(false);
+      return;
+    }
+
+    // User is successfully logged in
+    setIsLoading(false);
+    // Redirect to your app's homepage or dashboard
+  };
+
+  const handleSignInWithGoogle = async () => {
+    setIsLoading(true);
+
+    // eslint-disable-next-line no-unused-vars
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+    });
+
+    if (error) {
+      // Handle error
+      setIsLoading(false);
+      return;
+    }
+
+    // User is successfully logged in
+    setIsLoading(false);
+    // Redirect to your app's homepage or dashboard
   };
 
   return (
@@ -50,7 +125,7 @@ function Login() {
             />
           </Col>
           <Col className=" layout_panel xm={12} sm={12} md={6} px-0">
-            <Form className="form_panel" onSubmit={handleSignIn}>
+            <Form className="form_panel" onSubmit={handleSubmit}>
               <div className="intro">Welcome!</div>
               <div className="login">
                 Not yet a member?
@@ -66,9 +141,10 @@ function Login() {
                 </InputGroup.Text>
                 <Form.Control
                   type="email"
-                  placeholder="Example@refinipee.com"
-                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Refinipee@refinipee.com"
+                  ref={emailRef}
                   autocomplete="on"
+                  required
                 />
               </InputGroup>
 
@@ -80,23 +156,68 @@ function Login() {
                 <Form.Control
                   type="password"
                   placeholder="**********"
-                  onChange={(e) => setPassword(e.target.value)}
+                  ref={passwordRef}
                   autocomplete="on"
+                  required
                 />
               </InputGroup>
 
               <div className="remember_me">
-                <Form.Check aria-label="option 1" /> <div>Remeber Me</div>
+                <Form.Check aria-label="option 1" required />{' '}
+                <div>Remeber Me</div>
               </div>
+              {loading ? (
+                // Show the loader when isLoading is true
+                <div>
+                  <Loader />
+                </div>
+              ) : (
+                // Show the "Sign Up" button when isLoading is false
+                <Button
+                  variant="light"
+                  className="btn_Sign_page"
+                  type="submit"
+                  disabled={loading}
+                >
+                  {loading ? 'Logining in...' : 'Login'}
+                </Button>
+              )}
 
-              <Button
-                variant="light"
-                className="btn_login_page"
-                type="submit"
-                onClick={handleSignIn}
-              >
-                <span>{isLoading ? 'logining In...' : 'Login'}</span>
-              </Button>
+              <div className="thrid_party">
+                <p>Or login with </p>
+                <Row className="third_container">
+                  <Col className="third_party_icons">
+                    <Button
+                      variant="transpernt"
+                      className="spotiy_icon"
+                      type="button"
+                      onClick={handleSignInWithSpotify}
+                    >
+                      <BsSpotify />
+                    </Button>
+                  </Col>
+                  <Col className=" third_party_icons">
+                    <Button
+                      variant="transpernt"
+                      className='google_icon"'
+                      type="button"
+                      onClick={handleSignInWithGoogle}
+                    >
+                      <FcGoogle />
+                    </Button>
+                  </Col>
+                  <Col className="third_party_icons ">
+                    <Button
+                      variant="transpernt"
+                      className="facebook_icon"
+                      type="button"
+                      onClick={handleSignInWithFacebook}
+                    >
+                      <BsFacebook />
+                    </Button>
+                  </Col>
+                </Row>
+              </div>
 
               <div className="reset_password">
                 Forgot Password?
@@ -104,12 +225,25 @@ function Login() {
                   Reset!
                 </NavLink>
               </div>
-
-              <div data-aos="fade-up">
-                {error && <Alert variant="danger">{error}</Alert>}
+              <div data-aos="fade-in">
+                {errorMsg && (
+                  <Alert
+                    className="alert_card "
+                    variant="transpernt"
+                    onClose={() => setErrorMsg('')}
+                    dismissible
+                    style={{ backgroundColor: '#fff', color: '#ff0303' }}
+                  >
+                    {errorMsg}
+                  </Alert>
+                )}
               </div>
             </Form>
           </Col>
+          <Row>
+            <Col></Col>
+            <Col> </Col>
+          </Row>
         </Row>
       </Container>
     </div>
