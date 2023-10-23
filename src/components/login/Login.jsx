@@ -117,7 +117,7 @@ function Login() {
     <div className="Login_section">
       <Container>
         <Row xm={12} sm={12} md={12} lg={12}>
-          <Col xm={12} sm={12} md={6}>
+          <Col xm={12} sm={12} md={6} className="login_img">
             <img
               className="d-block justify-content-center w-100 login_img"
               src={login_01}

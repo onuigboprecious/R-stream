@@ -124,6 +124,8 @@ color:red;
     margin-right: 15px;
     padding: 2rem;
   }
-  
+  .Login_section .login_img{
+    display:none;
+  }
 
 }
