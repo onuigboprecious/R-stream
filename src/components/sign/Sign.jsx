@@ -97,10 +97,10 @@ function Sign() {
                   id="email"
                   ref={emailRef}
                   required
-                  autocomplete="on"
+                  autoComplete="on"
                 />
               </InputGroup>
-              <InputGroup className="mb-3" controlId="formGroupPassword">
+              <InputGroup className="mb-3" Controlid="formGroupPassword">
                 <InputGroup.Text id="basic-addon1" className="sign_icons">
                   {' '}
                   <BsFillKeyFill />{' '}
@@ -115,7 +115,7 @@ function Sign() {
                   autoComplete="on"
                 />
               </InputGroup>
-              <InputGroup className="mb-3" controlId="formGroupPassword">
+              <InputGroup className="mb-3" Controlid="formGroupPassword">
                 <InputGroup.Text id="basic-addon1" className="sign_icons">
                   {' '}
                   <BsFillKeyFill />{' '}
@@ -124,10 +124,10 @@ function Sign() {
                   placeholder="Repeat Password"
                   input
                   type="password"
-                  id="password"
+                  id="cpassword"
                   ref={confirmPasswordRef}
                   required
-                  autocomplete="on"
+                  autoComplete="on"
                 />
               </InputGroup>
 
@@ -174,7 +174,7 @@ function Sign() {
                     variant="treanspernt"
                     onClose={() => setMsg('')}
                     dismissible
-                    style={{ backgroundColor: '#fff', color: '#10d738' }}
+                    // style={{ backgroundColor: '#fff', color: '#10d738' }}
                   >
                     {msg}
                   </Alert>

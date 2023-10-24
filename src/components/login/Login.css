@@ -2,6 +2,7 @@
   column-gap: normal;
   margin-top: 2rem;
   margin-bottom: 0;
+
 }
 .login_img {
   max-width: 80%;
@@ -104,7 +105,7 @@
 
 .alert_card{
 margin:5px;
-display: flex;
+display:flexbox;
 color:red;
 
 }
@@ -127,5 +128,6 @@ color:red;
   .Login_section .login_img{
     display:none;
   }
+
 
 }

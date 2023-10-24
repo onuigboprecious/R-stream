@@ -1,12 +1,10 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import '../login/Login';
 
 const LoginButton = () => {
-
-  
   return (
-    <Button variant="Light" className="btn_login m-2" as={Link} to="/login">
+    <Button href="/login" variant="Light" className="btn_login m-2">
       Login
     </Button>
   );

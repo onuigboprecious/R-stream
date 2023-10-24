@@ -6,8 +6,11 @@ import AuthRoute from './Routes/protectedRoute';
 //----------React Bootstarp Dependencies----------------
 import 'react-bootstrap';
 import 'bootstrap';
+import '@popperjs/core';
+import 'bootstrap/dist/js/bootstrap.bundle'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './components/pod/media/Media.css';
+
 //-----------Application Components----------------------
 import Banner from './components/banner/Banner';
 import NavHead from './components/navbar/Navbar';
@@ -33,7 +36,7 @@ export default function App() {
   //AOS animation -----
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 500,
     });
   }, []);
   return (

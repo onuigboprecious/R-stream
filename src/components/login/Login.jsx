@@ -134,7 +134,7 @@ function Login() {
                 </NavLink>
               </div>
 
-              <InputGroup className="mb-3" controlId="formGroupEmail">
+              <InputGroup className="mb-3" controlid="formGroupEmail">
                 <InputGroup.Text id="basic-addon1" className="login_icons">
                   {' '}
                   <BsFillEnvelopeFill />{' '}
@@ -143,12 +143,13 @@ function Login() {
                   type="email"
                   placeholder="Refinipee@refinipee.com"
                   ref={emailRef}
-                  autocomplete="on"
+                  // autocomplete="on"
+                  autoComplete="on"
                   required
                 />
               </InputGroup>
 
-              <InputGroup className="mb-3" controlId="formGroupPassword">
+              <InputGroup className="mb-3" controlid="formGroupPassword">
                 <InputGroup.Text id="basic-addon1" className="login_icons">
                   {' '}
                   <BsFillKeyFill />{' '}
@@ -157,7 +158,8 @@ function Login() {
                   type="password"
                   placeholder="**********"
                   ref={passwordRef}
-                  autocomplete="on"
+                  // autocomplete="on"
+                  autoComplete='on'
                   required
                 />
               </InputGroup>
@@ -240,10 +242,7 @@ function Login() {
               </div>
             </Form>
           </Col>
-          <Row>
-            <Col></Col>
-            <Col> </Col>
-          </Row>
+        
         </Row>
       </Container>
     </div>
