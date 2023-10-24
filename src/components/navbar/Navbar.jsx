@@ -33,14 +33,11 @@ const NavHead = () => {
               className="me-auto my-5 my-lg-0 justify-content-center"
               style={{ maxHeight: 'auto' }}
             >
-              <Nav.Link href="#features" as={Link} to="/" className="link">
-                Features
-              </Nav.Link>
-              <Nav.Link  href="/" as={Link} to="/" className="link">
+              <Nav.Link href="/" as={Link} to="/" className="link">
                 Home
               </Nav.Link>
 
-              <Nav.Link  href="/live" as={Link} to="/live" className="link">
+              <Nav.Link href="/live" as={Link} to="/live" className="link">
                 Live Stream
               </Nav.Link>
               <Nav.Link href="/pod" as={Link} to="/pod" className="link">
@@ -48,6 +45,9 @@ const NavHead = () => {
               </Nav.Link>
               <Nav.Link href="/cat" as={Link} to="/cat" className="link">
                 Categories
+              </Nav.Link>
+              <Nav.Link href="#features" as={Link} to="/" className="link">
+                Profile
               </Nav.Link>
             </Nav>
             <Nav className="d-flex action">
