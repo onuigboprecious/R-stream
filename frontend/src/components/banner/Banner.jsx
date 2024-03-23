@@ -41,7 +41,7 @@ const Banner = () => {
                   className="btn_more"
                   type="submit"
                 >
-                  Learn More
+                  Learn More...
                 </Button>
               </div>
             </div>
