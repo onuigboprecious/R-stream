@@ -9,11 +9,11 @@ import { SideNav } from './SideNav';
 import SearchBar from '../pod/SearchBar';
 import TopicList from '../pod/Topics';
 import { NavLink } from 'react-router-dom';
-import YouTube from 'react-youtube';
+// import YouTube from 'react-youtube';
 
 
 function Stream() {
-  const videoId = 'your-youtube-video-id';
+  // const videoId = 'your-youtube-video-id';
   return (
     <Row>
       <Col lg={1} md={1}>
@@ -43,7 +43,7 @@ function Stream() {
                   <Col md={9}>
                     <div className='stream_panel'>
                     
-                        <YouTube videoId={videoId} className="youtube-video" /> 
+                        {/* <YouTube videoId={videoId} className="youtube-video" />  */}
                  
                     </div>
                   </Col>
